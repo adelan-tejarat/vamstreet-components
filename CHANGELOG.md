@@ -1,3 +1,6 @@
+# 1.2.0+4
+- [Refactor]: Refactor font height for alignment text in components  [#5](https://github.com/adelan-tejarat/vamstreet-components/pull/6)
+
 # 1.1.1+3
 - [Update]: Replace brand color in accent color pallet [#3](https://github.com/adelan-tejarat/vamstreet-components/pull/4)
 
