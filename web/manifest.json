@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "The Vamstreet Component Library is a unified design system and modular codebase that powers both the Vamstreet Client application and Dashboard. This repository contains reusable UI components and design assets to maintain consistency across all Vamstreet products.",
+    "description": "This is widget package for using in the pactus GUI project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
