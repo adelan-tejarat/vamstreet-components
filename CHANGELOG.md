@@ -1,3 +1,6 @@
+# 1.1.1+3
+- [Update]: Replace brand color in accent color pallet [#3](https://github.com/adelan-tejarat/vamstreet-components/pull/4)
+
 # 1.1.0+2
 - [Feature]: Add some components [#1](https://github.com/adelan-tejarat/vamstreet-components/pull/2)
   - Implemented adaptive primary button (filled button)
