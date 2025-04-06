@@ -83,17 +83,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 
 @immutable
 class OrangePallet extends ThemeExtension<OrangePallet> {
-  const OrangePallet(
-      {required this.orange900,
-      required this.orange800,
-      required this.orange700,
-      required this.orange600,
-      required this.orange500,
-      required this.orange400,
-      required this.orange300,
-      required this.orange200,
-      required this.orange100,
-      required this.orange50});
+  const OrangePallet({
+    required this.orange900,
+    required this.orange800,
+    required this.orange700,
+    required this.orange600,
+    required this.orange500,
+    required this.orange400,
+    required this.orange300,
+    required this.orange200,
+    required this.orange100,
+    required this.orange50,
+  });
 
   final Color? orange900;
   final Color? orange800;
@@ -107,17 +108,18 @@ class OrangePallet extends ThemeExtension<OrangePallet> {
   final Color? orange50;
 
   @override
-  OrangePallet copyWith(
-      {Color? orange900,
-      Color? orange800,
-      Color? orange700,
-      Color? orange600,
-      Color? orange500,
-      Color? orange400,
-      Color? orange300,
-      Color? orange200,
-      Color? orange100,
-      Color? orange50}) {
+  OrangePallet copyWith({
+    Color? orange900,
+    Color? orange800,
+    Color? orange700,
+    Color? orange600,
+    Color? orange500,
+    Color? orange400,
+    Color? orange300,
+    Color? orange200,
+    Color? orange100,
+    Color? orange50,
+  }) {
     return OrangePallet(
       orange900: orange900 ?? this.orange900,
       orange800: orange800 ?? this.orange800,
@@ -155,7 +157,8 @@ class OrangePallet extends ThemeExtension<OrangePallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'OrangePallet('
+  String toString() =>
+      'OrangePallet('
       'orange900:$orange900, '
       'orange800: $orange800, '
       'orange700: $orange700, '

@@ -115,10 +115,7 @@ class WidgetBookApp extends StatelessWidget {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              home: AppTheme(
-                themeData: data,
-                child: AppScaffold(child: child),
-              ),
+              home: AppTheme(themeData: data, child: AppScaffold(child: child)),
             );
           },
         ),

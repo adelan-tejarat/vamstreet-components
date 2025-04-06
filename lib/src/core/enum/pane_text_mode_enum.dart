@@ -10,5 +10,5 @@ enum PaneTextMode {
   enabled,
 
   /// Disabled mode, indicating an inactive state.
-  disabled;
+  disabled,
 }

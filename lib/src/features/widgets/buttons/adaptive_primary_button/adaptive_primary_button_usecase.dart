@@ -107,28 +107,32 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
   return IntrinsicHeight(
     child: IntrinsicWidth(
       child: AdaptivePrimaryButton(
-        title: buttonType == ButtonTypeEnum.titleOnly ||
-                buttonType == ButtonTypeEnum.iconAndTitle ||
-                buttonType == ButtonTypeEnum.titleAndIcon ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
-            ? context.tr(text)
-            : null,
+        title:
+            buttonType == ButtonTypeEnum.titleOnly ||
+                    buttonType == ButtonTypeEnum.iconAndTitle ||
+                    buttonType == ButtonTypeEnum.titleAndIcon ||
+                    buttonType == ButtonTypeEnum.iconTitleAndIcon
+                ? context.tr(text)
+                : null,
         requestState: requestState,
         buttonType: buttonType,
-        prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
-            ? prefixIcon
-            : null,
-        suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
-            ? suffixIcon
-            : null,
+        prefixIcon:
+            buttonType == ButtonTypeEnum.iconAndTitle ||
+                    buttonType == ButtonTypeEnum.iconTitleAndIcon
+                ? prefixIcon
+                : null,
+        suffixIcon:
+            buttonType == ButtonTypeEnum.titleAndIcon ||
+                    buttonType == ButtonTypeEnum.iconTitleAndIcon
+                ? suffixIcon
+                : null,
         baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
-        onPressed: (requestState == RequestStateEnum.loading || isDisabled)
-            ? null
-            : () {
-                debugPrint('Adaptive Primary Button Pressed');
-              },
+        onPressed:
+            (requestState == RequestStateEnum.loading || isDisabled)
+                ? null
+                : () {
+                  debugPrint('Adaptive Primary Button Pressed');
+                },
         paddingSize: paddingSize,
         textOverflow: textOverflow,
         minHeight: minHeight,

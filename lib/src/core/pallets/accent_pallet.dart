@@ -21,14 +21,14 @@ class AccentPallet extends ThemeExtension<AccentPallet> {
   final Color darkBlue;
 
   List<Color> get colors => [
-        blue, // 0
-        orange, // 1
-        red, // 2
-        purple, // 3
-        teal, // 4
-        lightGreen, // 5
-        darkBlue, // 6
-      ];
+    blue, // 0
+    orange, // 1
+    red, // 2
+    purple, // 3
+    teal, // 4
+    lightGreen, // 5
+    darkBlue, // 6
+  ];
 
   Color getByIndex(int index) {
     if (index < 0 || index >= colors.length) {

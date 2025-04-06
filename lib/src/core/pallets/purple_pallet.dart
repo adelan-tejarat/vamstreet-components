@@ -51,17 +51,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 
 @immutable
 class PurplePallet extends ThemeExtension<PurplePallet> {
-  const PurplePallet(
-      {required this.purple900,
-      required this.purple800,
-      required this.purple700,
-      required this.purple600,
-      required this.purple500,
-      required this.purple400,
-      required this.purple300,
-      required this.purple200,
-      required this.purple100,
-      required this.purple50});
+  const PurplePallet({
+    required this.purple900,
+    required this.purple800,
+    required this.purple700,
+    required this.purple600,
+    required this.purple500,
+    required this.purple400,
+    required this.purple300,
+    required this.purple200,
+    required this.purple100,
+    required this.purple50,
+  });
 
   final Color? purple900;
   final Color? purple800;
@@ -75,17 +76,18 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
   final Color? purple50;
 
   @override
-  PurplePallet copyWith(
-      {Color? purple900,
-      Color? purple800,
-      Color? purple700,
-      Color? purple600,
-      Color? purple500,
-      Color? purple400,
-      Color? purple300,
-      Color? purple200,
-      Color? purple100,
-      Color? purple50}) {
+  PurplePallet copyWith({
+    Color? purple900,
+    Color? purple800,
+    Color? purple700,
+    Color? purple600,
+    Color? purple500,
+    Color? purple400,
+    Color? purple300,
+    Color? purple200,
+    Color? purple100,
+    Color? purple50,
+  }) {
     return PurplePallet(
       purple900: purple900 ?? this.purple900,
       purple800: purple800 ?? this.purple800,
@@ -123,7 +125,8 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'PurplePallet('
+  String toString() =>
+      'PurplePallet('
       'purple900:$purple900, '
       'purple800: $purple800, '
       'purple700: $purple700, '

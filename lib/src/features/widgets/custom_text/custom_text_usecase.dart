@@ -16,16 +16,13 @@ import 'custom_text_widget.dart';
 /// - [description] : "Select the text to display from the dropdown."
 ///
 @UseCase(
-    name: 'Select the text to display from the dropdown',
-    type: CustomTextWidget)
+  name: 'Select the text to display from the dropdown',
+  type: CustomTextWidget,
+)
 Widget customTextWidgetUseCase(BuildContext context) {
   final selectedText = context.knobs.list<String>(
     label: 'Select Text',
-    options: [
-      LocaleKeys.app_name,
-      LocaleKeys.man,
-      LocaleKeys.woman,
-    ],
+    options: [LocaleKeys.app_name, LocaleKeys.man, LocaleKeys.woman],
     initialOption: LocaleKeys.app_name,
     description: 'Select the text to display from the dropdown.',
   );
@@ -79,8 +76,5 @@ Widget customTextWidgetUseCase(BuildContext context) {
     fontStyle: fontStyle == 'Italic' ? FontStyle.italic : FontStyle.normal,
   );
 
-  return CustomTextWidget(
-    text: selectedText,
-    textStyle: textStyle,
-  );
+  return CustomTextWidget(text: selectedText, textStyle: textStyle);
 }

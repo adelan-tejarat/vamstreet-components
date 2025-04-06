@@ -56,10 +56,7 @@ class ChipTextBox extends StatelessWidget {
         child: TextBox(
           readOnly: isReadOnly!,
           prefix: Padding(
-            padding: const EdgeInsetsDirectional.only(
-              bottom: 8,
-              start: 16,
-            ),
+            padding: const EdgeInsetsDirectional.only(bottom: 8, start: 16),
             child: Text(
               '$prefixText',
               style: TextStyle(
@@ -67,21 +64,26 @@ class ChipTextBox extends StatelessWidget {
               ),
             ),
           ),
-          padding:
-              const EdgeInsetsDirectional.only(bottom: 4, start: 4, end: 16),
-          placeholder: placeholder,
-          style:
-              TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
-          placeholderStyle:
-              TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
-          decoration: WidgetStateProperty.resolveWith<BoxDecoration>(
-            (Set<WidgetState> states) {
-              return BoxDecoration(
-                borderRadius: BorderRadius.circular(64),
-                color: context.fromPalletColor(chipTextMode.background),
-              );
-            },
+          padding: const EdgeInsetsDirectional.only(
+            bottom: 4,
+            start: 4,
+            end: 16,
           ),
+          placeholder: placeholder,
+          style: TextStyle(
+            color: context.fromPalletColor(chipTextMode.textColor),
+          ),
+          placeholderStyle: TextStyle(
+            color: context.fromPalletColor(chipTextMode.textColor),
+          ),
+          decoration: WidgetStateProperty.resolveWith<BoxDecoration>((
+            Set<WidgetState> states,
+          ) {
+            return BoxDecoration(
+              borderRadius: BorderRadius.circular(64),
+              color: context.fromPalletColor(chipTextMode.background),
+            );
+          }),
           onChanged: onChanged,
         ),
       ),

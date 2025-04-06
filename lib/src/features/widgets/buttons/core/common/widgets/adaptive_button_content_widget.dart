@@ -65,67 +65,59 @@ class AdaptiveButtonContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color contentColor =
-        context.getColorOfContentColorMode(contentColorMode);
+    final Color contentColor = context.getColorOfContentColorMode(
+      contentColorMode,
+    );
 
     return Center(
       child: switch (requestState) {
         RequestStateEnum.loading => SizedBox(
-            height: 16,
-            width: 16,
-            child: ProgressRing(
-              activeColor: contentColor,
-              backgroundColor: contentColor.basedOnLuminance(),
-              strokeWidth: 1,
-            ),
+          height: 16,
+          width: 16,
+          child: ProgressRing(
+            activeColor: contentColor,
+            backgroundColor: contentColor.basedOnLuminance(),
+            strokeWidth: 1,
           ),
-        RequestStateEnum.initial || RequestStateEnum.loaded => switch (
-              buttonType) {
-            ButtonTypeEnum.titleOnly => Text(
-                title!,
-                overflow: textOverflow,
-                style: TextStyle(color: contentColor),
-              ),
-            ButtonTypeEnum.iconAndTitle => Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(prefixIcon),
-                  const SizedBox(width: 8),
-                  Text(
-                    title!,
-                    style: TextStyle(color: contentColor),
-                  ),
-                ],
-              ),
-            ButtonTypeEnum.titleAndIcon => Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    title!,
-                    style: TextStyle(color: contentColor),
-                  ),
-                  const SizedBox(width: 8),
-                  Icon(suffixIcon),
-                ],
-              ),
-            ButtonTypeEnum.iconTitleAndIcon => Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(prefixIcon),
-                  const SizedBox(width: 8),
-                  Text(
-                    title!,
-                    style: TextStyle(color: contentColor),
-                  ),
-                  const SizedBox(width: 8),
-                  Icon(suffixIcon),
-                ],
-              ),
-            ButtonTypeEnum.iconOnly => Icon(icon),
-          },
+        ),
+        RequestStateEnum.initial ||
+        RequestStateEnum.loaded => switch (buttonType) {
+          ButtonTypeEnum.titleOnly => Text(
+            title!,
+            overflow: textOverflow,
+            style: TextStyle(color: contentColor),
+          ),
+          ButtonTypeEnum.iconAndTitle => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(prefixIcon),
+              const SizedBox(width: 8),
+              Text(title!, style: TextStyle(color: contentColor)),
+            ],
+          ),
+          ButtonTypeEnum.titleAndIcon => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(title!, style: TextStyle(color: contentColor)),
+              const SizedBox(width: 8),
+              Icon(suffixIcon),
+            ],
+          ),
+          ButtonTypeEnum.iconTitleAndIcon => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(prefixIcon),
+              const SizedBox(width: 8),
+              Text(title!, style: TextStyle(color: contentColor)),
+              const SizedBox(width: 8),
+              Icon(suffixIcon),
+            ],
+          ),
+          ButtonTypeEnum.iconOnly => Icon(icon),
+        },
         RequestStateEnum.error => const Icon(FluentIcons.sync),
       },
     );

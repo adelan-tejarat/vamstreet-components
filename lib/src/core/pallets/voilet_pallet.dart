@@ -49,17 +49,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 @immutable
 class VioletPallet extends ThemeExtension<VioletPallet> {
-  const VioletPallet(
-      {required this.violet900,
-      required this.violet800,
-      required this.violet700,
-      required this.violet600,
-      required this.violet500,
-      required this.violet400,
-      required this.violet300,
-      required this.violet200,
-      required this.violet100,
-      required this.violet50});
+  const VioletPallet({
+    required this.violet900,
+    required this.violet800,
+    required this.violet700,
+    required this.violet600,
+    required this.violet500,
+    required this.violet400,
+    required this.violet300,
+    required this.violet200,
+    required this.violet100,
+    required this.violet50,
+  });
 
   final Color? violet900;
   final Color? violet800;
@@ -73,17 +74,18 @@ class VioletPallet extends ThemeExtension<VioletPallet> {
   final Color? violet50;
 
   @override
-  VioletPallet copyWith(
-      {Color? violet900,
-      Color? violet800,
-      Color? violet700,
-      Color? violet600,
-      Color? violet500,
-      Color? violet400,
-      Color? violet300,
-      Color? violet200,
-      Color? violet100,
-      Color? violet50}) {
+  VioletPallet copyWith({
+    Color? violet900,
+    Color? violet800,
+    Color? violet700,
+    Color? violet600,
+    Color? violet500,
+    Color? violet400,
+    Color? violet300,
+    Color? violet200,
+    Color? violet100,
+    Color? violet50,
+  }) {
     return VioletPallet(
       violet900: violet900 ?? this.violet900,
       violet800: violet800 ?? this.violet800,
@@ -121,7 +123,8 @@ class VioletPallet extends ThemeExtension<VioletPallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'VioletPallet('
+  String toString() =>
+      'VioletPallet('
       'violet900:$violet900, '
       'violet800: $violet800, '
       'violet700: $violet700, '

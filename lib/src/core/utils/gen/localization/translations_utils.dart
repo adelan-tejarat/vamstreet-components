@@ -59,14 +59,18 @@ Future<void> _generateAppLocalesClass() async {
   buffer.writeln('/// [AppLocales] class manages app localization.');
   buffer.writeln('///');
   buffer.writeln(
-      '/// - [translationsPath] : Path to translation files (`lib/l10n`).');
+    '/// - [translationsPath] : Path to translation files (`lib/l10n`).',
+  );
   buffer.writeln(
-      '/// - [supportedLocales] : List of supported locales, generated from available');
+    '/// - [supportedLocales] : List of supported locales, generated from available',
+  );
   buffer.writeln(
-      '/// translations (e.g., `enUSLocale`, `frFRLocale`, `esESLocale`).');
+    '/// translations (e.g., `enUSLocale`, `frFRLocale`, `esESLocale`).',
+  );
   buffer.writeln('///');
   buffer.writeln(
-      '/// The class can be extended by adding more locales as needed.');
+    '/// The class can be extended by adding more locales as needed.',
+  );
   buffer.writeln('class AppLocales {');
   buffer.writeln('  AppLocales._();\n');
   buffer.writeln('  static const translationsPath = \'$translationsPath\';\n');
@@ -124,7 +128,9 @@ Future<Map<String, dynamic>> _readArbFile(String filePath) async {
 
 /// Logs a warning for missing ARB files.
 void _logMissingFile(String localeKey, String filePath) {
-  log('Warning: ARB file not found for locale "$localeKey" at path "$filePath".');
+  log(
+    'Warning: ARB file not found for locale "$localeKey" at path "$filePath".',
+  );
 }
 
 /// Generates the LocaleKeys class file from the translations.
@@ -137,12 +143,13 @@ Future<void> _generateLocaleKeysFile(
     return;
   }
 
-  final buffer = StringBuffer()
-    ..writeln('// ignore_for_file: constant_identifier_names');
+  final buffer =
+      StringBuffer()..writeln('// ignore_for_file: constant_identifier_names');
   buffer.writeln('abstract class LocaleKeys {');
 
-  final keys =
-      translations.values.first.keys.where((key) => !key.startsWith('@'));
+  final keys = translations.values.first.keys.where(
+    (key) => !key.startsWith('@'),
+  );
   for (var key in keys) {
     buffer.writeln('  static const String ${_sanitizeKey(key)} = \'$key\';');
   }
@@ -163,36 +170,40 @@ Future<void> _generateCodegenLoaderFile(
     return;
   }
 
-  final buffer = StringBuffer()
-    ..writeln('import \'dart:ui\' show Locale;')
-    ..writeln()
-    ..writeln(
-        '/// [CodegenLoader] class loads translations for different locales.')
-    ..writeln('///')
-    ..writeln(
-        '/// - [load] : Loads translation data based on the provided locale.')
-    ..writeln(
-        '/// - [mapLocales] : Maps locales (e.g., `en_US`, `fr_FR`, `es_ES`) to their respective translation data.')
-    ..writeln('///')
-    ..writeln('/// Example translations include:')
-    ..writeln('/// - `enUS`: English translations.')
-    ..writeln('/// - `frFR`: French translations.')
-    ..writeln('/// - `esES`: Spanish translations.')
-    ..writeln('///')
-    ..writeln('class CodegenLoader {')
-    ..writeln('  const CodegenLoader();')
-    ..writeln()
-    ..writeln('  Future<Map<String, dynamic>?> load(')
-    ..writeln('    String path,')
-    ..writeln('    Map<String, dynamic> localeMap,')
-    ..writeln('  ) {')
-    ..writeln('    return Future.value(')
-    ..writeln(
-      '      mapLocales["\${Locale(localeMap["language"], localeMap["country"])}"],',
-    )
-    ..writeln('    );')
-    ..writeln('  }')
-    ..writeln();
+  final buffer =
+      StringBuffer()
+        ..writeln('import \'dart:ui\' show Locale;')
+        ..writeln()
+        ..writeln(
+          '/// [CodegenLoader] class loads translations for different locales.',
+        )
+        ..writeln('///')
+        ..writeln(
+          '/// - [load] : Loads translation data based on the provided locale.',
+        )
+        ..writeln(
+          '/// - [mapLocales] : Maps locales (e.g., `en_US`, `fr_FR`, `es_ES`) to their respective translation data.',
+        )
+        ..writeln('///')
+        ..writeln('/// Example translations include:')
+        ..writeln('/// - `enUS`: English translations.')
+        ..writeln('/// - `frFR`: French translations.')
+        ..writeln('/// - `esES`: Spanish translations.')
+        ..writeln('///')
+        ..writeln('class CodegenLoader {')
+        ..writeln('  const CodegenLoader();')
+        ..writeln()
+        ..writeln('  Future<Map<String, dynamic>?> load(')
+        ..writeln('    String path,')
+        ..writeln('    Map<String, dynamic> localeMap,')
+        ..writeln('  ) {')
+        ..writeln('    return Future.value(')
+        ..writeln(
+          '      mapLocales["\${Locale(localeMap["language"], localeMap["country"])}"],',
+        )
+        ..writeln('    );')
+        ..writeln('  }')
+        ..writeln();
 
   // Generate locale-specific translation maps
   for (var entry in translations.entries) {

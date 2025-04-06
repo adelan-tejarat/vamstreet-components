@@ -37,10 +37,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///   - Throws an exception if the index is invalid.
 @immutable
 class PanePallet extends ThemeExtension<PanePallet> {
-  const PanePallet({
-    required this.enableColor,
-    required this.disableColor,
-  });
+  const PanePallet({required this.enableColor, required this.disableColor});
 
   final Color? enableColor;
   final Color? disableColor;
@@ -68,7 +65,8 @@ class PanePallet extends ThemeExtension<PanePallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'PanePallet('
+  String toString() =>
+      'PanePallet('
       'enableColor:$enableColor, '
       'disableColor: $disableColor, '
       ')';

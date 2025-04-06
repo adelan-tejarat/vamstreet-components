@@ -34,17 +34,12 @@ class CustomizedLocalizationAddon extends WidgetbookAddon<Locale> {
     required this.locales,
     required this.localizationsDelegates,
     this.initialLocale,
-  })  : assert(
-          locales.isNotEmpty,
-          'locales cannot be empty',
-        ),
-        assert(
-          initialLocale == null || locales.contains(initialLocale),
-          'initialLocale must be in locales',
-        ),
-        super(
-          name: 'Locale',
-        );
+  }) : assert(locales.isNotEmpty, 'locales cannot be empty'),
+       assert(
+         initialLocale == null || locales.contains(initialLocale),
+         'initialLocale must be in locales',
+       ),
+       super(name: 'Locale');
 
   final Locale? initialLocale;
   final List<Locale> locales;
@@ -68,11 +63,7 @@ class CustomizedLocalizationAddon extends WidgetbookAddon<Locale> {
   }
 
   @override
-  Widget buildUseCase(
-    BuildContext context,
-    Widget child,
-    Locale setting,
-  ) {
+  Widget buildUseCase(BuildContext context, Widget child, Locale setting) {
     // This ensures that the updated locale is reflected immediately
     // It triggers a rebuild after the locale change.
     return Localizations(

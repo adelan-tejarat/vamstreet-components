@@ -34,9 +34,6 @@ class CustomTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      context.tr(text),
-      style: textStyle,
-    );
+    return Text(context.tr(text), style: textStyle);
   }
 }

@@ -21,9 +21,4 @@
 ///
 library;
 
-enum RequestStateEnum {
-  initial,
-  loading,
-  loaded,
-  error,
-}
+enum RequestStateEnum { initial, loading, loaded, error }

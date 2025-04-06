@@ -42,13 +42,16 @@ void main() {
 
     final themeWithAccent = AppThemeData.darkTheme(const Color(0xFF0F6CBD));
 
-    testWidgets('renders correctly with default values',
-        (WidgetTester tester) async {
-      await tester.pumpWidget(createTestableWidget(
-        themeWithAccent: themeWithAccent,
-        chipTextMode: ChipTextMode.normal,
-        onChanged: (text) => changedText = text,
-      ));
+    testWidgets('renders correctly with default values', (
+      WidgetTester tester,
+    ) async {
+      await tester.pumpWidget(
+        createTestableWidget(
+          themeWithAccent: themeWithAccent,
+          chipTextMode: ChipTextMode.normal,
+          onChanged: (text) => changedText = text,
+        ),
+      );
 
       expect(find.byType(TextBox), findsOneWidget);
     });
@@ -56,22 +59,26 @@ void main() {
     testWidgets('displays correct prefix text', (WidgetTester tester) async {
       const testPrefix = 'Prefix:';
 
-      await tester.pumpWidget(createTestableWidget(
-        themeWithAccent: themeWithAccent,
-        chipTextMode: ChipTextMode.correct,
-        prefixText: testPrefix,
-        onChanged: (text) => changedText = text,
-      ));
+      await tester.pumpWidget(
+        createTestableWidget(
+          themeWithAccent: themeWithAccent,
+          chipTextMode: ChipTextMode.correct,
+          prefixText: testPrefix,
+          onChanged: (text) => changedText = text,
+        ),
+      );
 
       expect(find.text(testPrefix), findsOneWidget);
     });
 
     testWidgets('updates value on text change', (WidgetTester tester) async {
-      await tester.pumpWidget(createTestableWidget(
-        themeWithAccent: themeWithAccent,
-        chipTextMode: ChipTextMode.inCorrect,
-        onChanged: (text) => changedText = text,
-      ));
+      await tester.pumpWidget(
+        createTestableWidget(
+          themeWithAccent: themeWithAccent,
+          chipTextMode: ChipTextMode.inCorrect,
+          onChanged: (text) => changedText = text,
+        ),
+      );
 
       final textBox = find.byType(TextBox);
       await tester.enterText(textBox, 'New Input');
@@ -81,12 +88,14 @@ void main() {
     });
 
     testWidgets('is disabled when read-only', (WidgetTester tester) async {
-      await tester.pumpWidget(createTestableWidget(
-        themeWithAccent: themeWithAccent,
-        chipTextMode: ChipTextMode.correct,
-        isReadOnly: true,
-        onChanged: (text) => changedText = text,
-      ));
+      await tester.pumpWidget(
+        createTestableWidget(
+          themeWithAccent: themeWithAccent,
+          chipTextMode: ChipTextMode.correct,
+          isReadOnly: true,
+          onChanged: (text) => changedText = text,
+        ),
+      );
 
       final textBox = find.byType(TextBox);
       expect(tester.widget<TextBox>(textBox).readOnly, isTrue);

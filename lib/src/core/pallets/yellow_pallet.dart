@@ -49,17 +49,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 @immutable
 class YellowPallet extends ThemeExtension<YellowPallet> {
-  const YellowPallet(
-      {required this.yellow900,
-      required this.yellow800,
-      required this.yellow700,
-      required this.yellow600,
-      required this.yellow500,
-      required this.yellow400,
-      required this.yellow300,
-      required this.yellow200,
-      required this.yellow100,
-      required this.yellow50});
+  const YellowPallet({
+    required this.yellow900,
+    required this.yellow800,
+    required this.yellow700,
+    required this.yellow600,
+    required this.yellow500,
+    required this.yellow400,
+    required this.yellow300,
+    required this.yellow200,
+    required this.yellow100,
+    required this.yellow50,
+  });
 
   final Color? yellow900;
   final Color? yellow800;
@@ -73,17 +74,18 @@ class YellowPallet extends ThemeExtension<YellowPallet> {
   final Color? yellow50;
 
   @override
-  YellowPallet copyWith(
-      {Color? yellow900,
-      Color? yellow800,
-      Color? yellow700,
-      Color? yellow600,
-      Color? yellow500,
-      Color? yellow400,
-      Color? yellow300,
-      Color? yellow200,
-      Color? yellow100,
-      Color? yellow50}) {
+  YellowPallet copyWith({
+    Color? yellow900,
+    Color? yellow800,
+    Color? yellow700,
+    Color? yellow600,
+    Color? yellow500,
+    Color? yellow400,
+    Color? yellow300,
+    Color? yellow200,
+    Color? yellow100,
+    Color? yellow50,
+  }) {
     return YellowPallet(
       yellow900: yellow900 ?? this.yellow900,
       yellow800: yellow800 ?? this.yellow800,
@@ -121,7 +123,8 @@ class YellowPallet extends ThemeExtension<YellowPallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'YellowPallet('
+  String toString() =>
+      'YellowPallet('
       'yellow900:$yellow900, '
       'yellow800: $yellow800, '
       'yellow700: $yellow700, '

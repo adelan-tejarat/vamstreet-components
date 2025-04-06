@@ -197,10 +197,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(
-        minHeight: minHeight,
-        maxWidth: maxWidth,
-      ),
+      constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: OutlinedButton(
@@ -213,14 +210,16 @@ class AdaptiveSecondaryButton extends StatelessWidget {
           onPressed:
               (requestState == RequestStateEnum.loading) ? null : onPressed,
           child: Padding(
-            padding:
-                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+            padding: EdgeInsets.symmetric(
+              horizontal: paddingSize.horizontalSize,
+            ),
             child: AdaptiveButtonContent(
               textOverflow: textOverflow,
               requestState: requestState,
-              contentColorMode: isDefaultOutlinedButton
-                  ? ContentColorMode.defaultMode
-                  : ContentColorMode.accentMode,
+              contentColorMode:
+                  isDefaultOutlinedButton
+                      ? ContentColorMode.defaultMode
+                      : ContentColorMode.accentMode,
               suffixIcon: suffixIcon,
               prefixIcon: prefixIcon,
               title: title,

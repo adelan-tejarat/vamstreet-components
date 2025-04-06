@@ -35,8 +35,8 @@ ButtonStyle getFluentButtonStyleMethod({
 
   return ButtonStyle(
     padding: WidgetStateProperty.all<EdgeInsetsDirectional?>(
-        EdgeInsetsDirectional.symmetric(
-            horizontal: paddingSize.horizontalSize)),
+      EdgeInsetsDirectional.symmetric(horizontal: paddingSize.horizontalSize),
+    ),
     backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
       if (states.isDisabled) {
         return theme.accentColor.darkest;
@@ -58,8 +58,8 @@ ButtonStyle getFluentButtonStyleMethod({
       }
       return 0.0;
     }),
-    shape: WidgetStateProperty.all(RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(borderRadius),
-    )),
+    shape: WidgetStateProperty.all(
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
+    ),
   );
 }

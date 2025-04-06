@@ -158,10 +158,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(
-        minHeight: minHeight,
-        maxWidth: maxWidth,
-      ),
+      constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: FilledButton(
@@ -173,8 +170,9 @@ class AdaptivePrimaryButton extends StatelessWidget {
           onPressed:
               (requestState == RequestStateEnum.loading) ? null : onPressed,
           child: Padding(
-            padding:
-                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+            padding: EdgeInsets.symmetric(
+              horizontal: paddingSize.horizontalSize,
+            ),
             child: AdaptiveButtonContent(
               textOverflow: textOverflow,
               requestState: requestState,

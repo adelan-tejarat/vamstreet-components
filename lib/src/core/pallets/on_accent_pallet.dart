@@ -8,9 +8,7 @@ class OnAccentPallet extends ThemeExtension<OnAccentPallet> {
 
   @override
   OnAccentPallet copyWith({Color? onAccentColor}) {
-    return OnAccentPallet(
-      onAccentColor: onAccentColor ?? this.onAccentColor,
-    );
+    return OnAccentPallet(onAccentColor: onAccentColor ?? this.onAccentColor);
   }
 
   @override

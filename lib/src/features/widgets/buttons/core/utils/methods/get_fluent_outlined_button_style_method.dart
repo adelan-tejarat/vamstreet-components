@@ -51,9 +51,10 @@ ButtonStyle getFluentOutlinedButtonStyleMethod({
   required double borderRadius,
 }) {
   final theme = AppTheme.of(context);
-  final buttonColor = isDefaultOutlinedButton
-      ? theme.extension<DarkPallet>()!.dark900!
-      : theme.accentColor;
+  final buttonColor =
+      isDefaultOutlinedButton
+          ? theme.extension<DarkPallet>()!.dark900!
+          : theme.accentColor;
 
   return ButtonStyle(
     padding: WidgetStateProperty.all<EdgeInsetsDirectional?>(

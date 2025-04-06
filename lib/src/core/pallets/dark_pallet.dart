@@ -84,17 +84,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 @immutable
 class DarkPallet extends ThemeExtension<DarkPallet> {
-  const DarkPallet(
-      {required this.dark900,
-      required this.dark800,
-      required this.dark700,
-      required this.dark600,
-      required this.dark500,
-      required this.dark400,
-      required this.dark300,
-      required this.dark200,
-      required this.dark100,
-      required this.dark50});
+  const DarkPallet({
+    required this.dark900,
+    required this.dark800,
+    required this.dark700,
+    required this.dark600,
+    required this.dark500,
+    required this.dark400,
+    required this.dark300,
+    required this.dark200,
+    required this.dark100,
+    required this.dark50,
+  });
 
   final Color? dark900;
   final Color? dark800;
@@ -108,17 +109,18 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
   final Color? dark50;
 
   @override
-  DarkPallet copyWith(
-      {Color? dark900,
-      Color? dark800,
-      Color? dark700,
-      Color? dark600,
-      Color? dark500,
-      Color? dark400,
-      Color? dark300,
-      Color? dark200,
-      Color? dark100,
-      Color? dark50}) {
+  DarkPallet copyWith({
+    Color? dark900,
+    Color? dark800,
+    Color? dark700,
+    Color? dark600,
+    Color? dark500,
+    Color? dark400,
+    Color? dark300,
+    Color? dark200,
+    Color? dark100,
+    Color? dark50,
+  }) {
     return DarkPallet(
       dark900: dark900 ?? this.dark900,
       dark800: dark800 ?? this.dark800,
@@ -156,7 +158,8 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'DarkPallet('
+  String toString() =>
+      'DarkPallet('
       'dark900:$dark900, '
       'dark800: $dark800, '
       'dark700: $dark700, '
@@ -196,7 +199,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
     }
   }
 
-// dark theme with opacity
+  // dark theme with opacity
   static const light = DarkPallet(
     dark900: Color(0xFF1A1A1A),
     dark800: Color.fromRGBO(26, 26, 26, 0.8),

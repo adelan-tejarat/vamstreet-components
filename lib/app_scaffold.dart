@@ -27,10 +27,7 @@ import 'package:vamstreet_components/src/core/theme/app_theme.dart';
 ///
 
 class AppScaffold extends StatelessWidget {
-  const AppScaffold({
-    super.key,
-    required this.child,
-  });
+  const AppScaffold({super.key, required this.child});
 
   final Widget child;
 
@@ -38,11 +35,12 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: DecoratedBox(
-          position: DecorationPosition.background,
-          decoration: BoxDecoration(
-            color: AppTheme.of(context).scaffoldBackgroundColor,
-          ),
-          child: Center(child: child)),
+        position: DecorationPosition.background,
+        decoration: BoxDecoration(
+          color: AppTheme.of(context).scaffoldBackgroundColor,
+        ),
+        child: Center(child: child),
+      ),
     );
   }
 }

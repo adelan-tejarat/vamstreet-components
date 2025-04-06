@@ -86,17 +86,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 
 @immutable
 class BlueGrayPallet extends ThemeExtension<BlueGrayPallet> {
-  const BlueGrayPallet(
-      {required this.blueGray900,
-      required this.blueGray800,
-      required this.blueGray700,
-      required this.blueGray600,
-      required this.blueGray500,
-      required this.blueGray400,
-      required this.blueGray300,
-      required this.blueGray200,
-      required this.blueGray100,
-      required this.blueGray50});
+  const BlueGrayPallet({
+    required this.blueGray900,
+    required this.blueGray800,
+    required this.blueGray700,
+    required this.blueGray600,
+    required this.blueGray500,
+    required this.blueGray400,
+    required this.blueGray300,
+    required this.blueGray200,
+    required this.blueGray100,
+    required this.blueGray50,
+  });
 
   final Color? blueGray900;
   final Color? blueGray800;
@@ -110,17 +111,18 @@ class BlueGrayPallet extends ThemeExtension<BlueGrayPallet> {
   final Color? blueGray50;
 
   @override
-  BlueGrayPallet copyWith(
-      {Color? blueGray900,
-      Color? blueGray800,
-      Color? blueGray700,
-      Color? blueGray600,
-      Color? blueGray500,
-      Color? blueGray400,
-      Color? blueGray300,
-      Color? blueGray200,
-      Color? blueGray100,
-      Color? blueGray50}) {
+  BlueGrayPallet copyWith({
+    Color? blueGray900,
+    Color? blueGray800,
+    Color? blueGray700,
+    Color? blueGray600,
+    Color? blueGray500,
+    Color? blueGray400,
+    Color? blueGray300,
+    Color? blueGray200,
+    Color? blueGray100,
+    Color? blueGray50,
+  }) {
     return BlueGrayPallet(
       blueGray900: blueGray900 ?? this.blueGray900,
       blueGray800: blueGray800 ?? this.blueGray800,
@@ -158,7 +160,8 @@ class BlueGrayPallet extends ThemeExtension<BlueGrayPallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'BlueGrayPallet('
+  String toString() =>
+      'BlueGrayPallet('
       'blueGray900:$blueGray900, '
       'blueGray800: $blueGray800, '
       'blueGray700: $blueGray700, '

@@ -85,17 +85,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 
 @immutable
 class BluePallet extends ThemeExtension<BluePallet> {
-  const BluePallet(
-      {required this.blue900,
-      required this.blue800,
-      required this.blue700,
-      required this.blue600,
-      required this.blue500,
-      required this.blue400,
-      required this.blue300,
-      required this.blue200,
-      required this.blue100,
-      required this.blue50});
+  const BluePallet({
+    required this.blue900,
+    required this.blue800,
+    required this.blue700,
+    required this.blue600,
+    required this.blue500,
+    required this.blue400,
+    required this.blue300,
+    required this.blue200,
+    required this.blue100,
+    required this.blue50,
+  });
 
   final Color? blue900;
   final Color? blue800;
@@ -109,17 +110,18 @@ class BluePallet extends ThemeExtension<BluePallet> {
   final Color? blue50;
 
   @override
-  BluePallet copyWith(
-      {Color? blue900,
-      Color? blue800,
-      Color? blue700,
-      Color? blue600,
-      Color? blue500,
-      Color? blue400,
-      Color? blue300,
-      Color? blue200,
-      Color? blue100,
-      Color? blue50}) {
+  BluePallet copyWith({
+    Color? blue900,
+    Color? blue800,
+    Color? blue700,
+    Color? blue600,
+    Color? blue500,
+    Color? blue400,
+    Color? blue300,
+    Color? blue200,
+    Color? blue100,
+    Color? blue50,
+  }) {
     return BluePallet(
       blue900: blue900 ?? this.blue900,
       blue800: blue800 ?? this.blue800,
@@ -157,7 +159,8 @@ class BluePallet extends ThemeExtension<BluePallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'BluePallet('
+  String toString() =>
+      'BluePallet('
       'blue900:$blue900, '
       'blue800: $blue800, '
       'blue700: $blue700, '

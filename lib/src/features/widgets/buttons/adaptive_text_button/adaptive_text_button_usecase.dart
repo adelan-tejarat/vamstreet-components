@@ -49,10 +49,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 /// - **[baseIcon]** (IconData?):
 ///   - The icon to display on the button when only an icon is shown (icon-only button).
 
-@UseCase(
-  name: 'Adaptive Text Button with Knobs',
-  type: AdaptiveTextButton,
-)
+@UseCase(name: 'Adaptive Text Button with Knobs', type: AdaptiveTextButton)
 Widget adaptiveTextButtonUseCase(BuildContext context) {
   final requestState = context.knobs.list<RequestStateEnum>(
     label: 'Request State',
@@ -129,28 +126,32 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
   return IntrinsicHeight(
     child: IntrinsicWidth(
       child: AdaptiveTextButton(
-        title: buttonType == ButtonTypeEnum.titleOnly ||
-                buttonType == ButtonTypeEnum.iconAndTitle ||
-                buttonType == ButtonTypeEnum.titleAndIcon ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
-            ? context.tr(text)
-            : null,
+        title:
+            buttonType == ButtonTypeEnum.titleOnly ||
+                    buttonType == ButtonTypeEnum.iconAndTitle ||
+                    buttonType == ButtonTypeEnum.titleAndIcon ||
+                    buttonType == ButtonTypeEnum.iconTitleAndIcon
+                ? context.tr(text)
+                : null,
         requestState: requestState,
         buttonType: buttonType,
-        prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
-            ? prefixIcon
-            : null,
-        suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
-            ? suffixIcon
-            : null,
+        prefixIcon:
+            buttonType == ButtonTypeEnum.iconAndTitle ||
+                    buttonType == ButtonTypeEnum.iconTitleAndIcon
+                ? prefixIcon
+                : null,
+        suffixIcon:
+            buttonType == ButtonTypeEnum.titleAndIcon ||
+                    buttonType == ButtonTypeEnum.iconTitleAndIcon
+                ? suffixIcon
+                : null,
         baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
-        onPressed: (requestState == RequestStateEnum.loading)
-            ? null
-            : () {
-                debugPrint('Adaptive Text Button Pressed');
-              },
+        onPressed:
+            (requestState == RequestStateEnum.loading)
+                ? null
+                : () {
+                  debugPrint('Adaptive Text Button Pressed');
+                },
         paddingSize: paddingSize,
         textOverflow: textOverflow,
         minHeight: minHeight,

@@ -83,17 +83,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 @immutable
 class GrayPallet extends ThemeExtension<GrayPallet> {
-  const GrayPallet(
-      {required this.gray900,
-      required this.gray800,
-      required this.gray700,
-      required this.gray600,
-      required this.gray500,
-      required this.gray400,
-      required this.gray300,
-      required this.gray200,
-      required this.gray100,
-      required this.gray50});
+  const GrayPallet({
+    required this.gray900,
+    required this.gray800,
+    required this.gray700,
+    required this.gray600,
+    required this.gray500,
+    required this.gray400,
+    required this.gray300,
+    required this.gray200,
+    required this.gray100,
+    required this.gray50,
+  });
 
   final Color? gray900;
   final Color? gray800;
@@ -107,17 +108,18 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
   final Color? gray50;
 
   @override
-  GrayPallet copyWith(
-      {Color? gray900,
-      Color? gray800,
-      Color? gray700,
-      Color? gray600,
-      Color? gray500,
-      Color? gray400,
-      Color? gray300,
-      Color? gray200,
-      Color? gray100,
-      Color? gray50}) {
+  GrayPallet copyWith({
+    Color? gray900,
+    Color? gray800,
+    Color? gray700,
+    Color? gray600,
+    Color? gray500,
+    Color? gray400,
+    Color? gray300,
+    Color? gray200,
+    Color? gray100,
+    Color? gray50,
+  }) {
     return GrayPallet(
       gray900: gray900 ?? this.gray900,
       gray800: gray800 ?? this.gray800,
@@ -155,7 +157,8 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'GrayPallet('
+  String toString() =>
+      'GrayPallet('
       'gray900:$gray900, '
       'gray800: $gray800, '
       'gray700: $gray700, '

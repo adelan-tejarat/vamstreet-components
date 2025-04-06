@@ -81,17 +81,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 @immutable
 class LightPallet extends ThemeExtension<LightPallet> {
-  const LightPallet(
-      {required this.light900,
-      required this.light800,
-      required this.light700,
-      required this.light600,
-      required this.light500,
-      required this.light400,
-      required this.light300,
-      required this.light200,
-      required this.light100,
-      required this.light50});
+  const LightPallet({
+    required this.light900,
+    required this.light800,
+    required this.light700,
+    required this.light600,
+    required this.light500,
+    required this.light400,
+    required this.light300,
+    required this.light200,
+    required this.light100,
+    required this.light50,
+  });
 
   final Color? light900;
   final Color? light800;
@@ -105,17 +106,18 @@ class LightPallet extends ThemeExtension<LightPallet> {
   final Color? light50;
 
   @override
-  LightPallet copyWith(
-      {Color? light900,
-      Color? light800,
-      Color? light700,
-      Color? light600,
-      Color? light500,
-      Color? light400,
-      Color? light300,
-      Color? light200,
-      Color? light100,
-      Color? light50}) {
+  LightPallet copyWith({
+    Color? light900,
+    Color? light800,
+    Color? light700,
+    Color? light600,
+    Color? light500,
+    Color? light400,
+    Color? light300,
+    Color? light200,
+    Color? light100,
+    Color? light50,
+  }) {
     return LightPallet(
       light900: light900 ?? this.light900,
       light800: light800 ?? this.light800,
@@ -153,7 +155,8 @@ class LightPallet extends ThemeExtension<LightPallet> {
   // Controls how it displays when the instance is being passed
   // to the `print()` method.
   @override
-  String toString() => 'LightPallet('
+  String toString() =>
+      'LightPallet('
       'light900:$light900, '
       'light800: $light800, '
       'light700: $light700, '
@@ -193,7 +196,7 @@ class LightPallet extends ThemeExtension<LightPallet> {
     }
   }
 
-// Light theme with opacity
+  // Light theme with opacity
   static const light = LightPallet(
     light900: Color(0xFFFFFFFF),
     light800: Color.fromRGBO(255, 255, 255, 0.8),

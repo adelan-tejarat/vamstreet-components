@@ -192,32 +192,34 @@ class AdaptiveTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final buttonColor = isDefaultTextButton
-        ? theme.extension<DarkPallet>()!.dark900!
-        : theme.accentColor;
+    final buttonColor =
+        isDefaultTextButton
+            ? theme.extension<DarkPallet>()!.dark900!
+            : theme.accentColor;
     return ConstrainedBox(
-      constraints: BoxConstraints(
-        minHeight: minHeight,
-        maxWidth: maxWidth,
-      ),
+      constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: Button(
           style: ButtonStyle(
             padding: WidgetStateProperty.all(
-                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
+              EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+            ),
             backgroundColor: WidgetStateProperty.all(Colors.transparent),
             foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
             elevation: WidgetStateProperty.all(0),
-            shape: WidgetStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius),
-            )),
+            shape: WidgetStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius),
+              ),
+            ),
           ),
           onPressed:
               (requestState == RequestStateEnum.loading) ? null : onPressed,
           child: Padding(
-            padding:
-                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+            padding: EdgeInsets.symmetric(
+              horizontal: paddingSize.horizontalSize,
+            ),
             child: AdaptiveButtonContent(
               textOverflow: textOverflow,
               requestState: requestState,
@@ -227,9 +229,10 @@ class AdaptiveTextButton extends StatelessWidget {
               buttonType: buttonType,
               icon: baseIcon,
               paddingSize: paddingSize,
-              contentColorMode: isDefaultTextButton
-                  ? ContentColorMode.defaultMode
-                  : ContentColorMode.accentMode,
+              contentColorMode:
+                  isDefaultTextButton
+                      ? ContentColorMode.defaultMode
+                      : ContentColorMode.accentMode,
             ),
           ),
         ),
