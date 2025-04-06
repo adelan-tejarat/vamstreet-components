@@ -26,41 +26,50 @@ import 'package:flutter/material.dart' show FontWeight, TextStyle;
 ///   - Font: `Inter-Medium`
 ///   - Font Size: `12px`
 ///   - Font Weight: `Medium (500)`
+///   - Font Height: 1
+///
 ///
 /// - **[smallRegular]**:
 ///   - Font: `Inter-Regular`
 ///   - Font Size: `14px`
 ///   - Font Weight: `Regular (400)`
+///   - Font Height: 1
 ///
 /// - **[bodyBold]**:
 ///   - Font: `Inter-Bold`
 ///   - Font Size: `16px`
 ///   - Font Weight: `Bold (700)`
+///   - Font Height: 1
 ///
 /// - **[bodyRegular]**:
 ///   - Font: `Inter-Regular`
 ///   - Font Size: `16px`
 ///   - Font Weight: `Regular (400)`
+///   - Font Height: 1
 ///
 /// - **[subtitleRegular]**:
 ///   - Font: `Inter-Regular`
 ///   - Font Size: `20px`
 ///   - Font Weight: `Regular (400)`
+///   - Font Height: 1
 ///
 /// - **[titleMedium]**:
 ///   - Font: `Inter-Medium`
 ///   - Font Size: `24px`
 ///   - Font Weight: `Medium (500)`
+///   - Font Height: 1
 ///
 /// - **[titleBold]**:
 ///   - Font: `Inter-Bold`
 ///   - Font Size: `28px`
 ///   - Font Weight: `Bold (700)`
+///   - Font Height: 1
 ///
 /// - **[headerBold]**:
 ///   - Font: `Inter-Bold`
 ///   - Font Size: `42px`
 ///   - Font Weight: `Bold (700)`
+///   - Font Height: 1
 ///
 /// ### Example:
 ///
@@ -91,6 +100,7 @@ class InterTextStyles {
     fontFamily: interMedium, // font-family: Inter-Medium;
     fontSize: 12, // font-size: 12px;
     fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
+    height: 1,
   );
 
   // Small/regular
@@ -98,6 +108,7 @@ class InterTextStyles {
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 14, // font-size: 14px;
     fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
+    height: 1,
   );
 
   // Body/bold
@@ -105,6 +116,7 @@ class InterTextStyles {
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 16, // font-size: 16px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
+    height: 1,
   );
 
   // Body/regular
@@ -112,6 +124,7 @@ class InterTextStyles {
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 16, // font-size: 16px;
     fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
+    height: 1,
   );
 
   // Subtitle/regular
@@ -119,6 +132,7 @@ class InterTextStyles {
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 20, // font-size: 20px;
     fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
+    height: 1,
   );
 
   // Title/medium
@@ -126,6 +140,7 @@ class InterTextStyles {
     fontFamily: interMedium, // font-family: Inter-Medium;
     fontSize: 24, // font-size: 24px;
     fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
+    height: 1,
   );
 
   // Title/bold
@@ -133,6 +148,7 @@ class InterTextStyles {
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 28, // font-size: 28px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
+    height: 1,
   );
 
   // Header/bold
@@ -140,5 +156,6 @@ class InterTextStyles {
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 42, // font-size: 42px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
+    height: 1,
   );
 }
