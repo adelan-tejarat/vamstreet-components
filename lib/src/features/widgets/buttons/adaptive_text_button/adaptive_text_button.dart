@@ -196,43 +196,45 @@ class AdaptiveTextButton extends StatelessWidget {
         isDefaultTextButton
             ? theme.extension<DarkPallet>()!.dark900!
             : theme.accentColor;
-    return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: Button(
-          style: ButtonStyle(
-            padding: WidgetStateProperty.all(
-              EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
-            ),
-            backgroundColor: WidgetStateProperty.all(Colors.transparent),
-            foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
-            elevation: WidgetStateProperty.all(0),
-            shape: WidgetStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(borderRadius),
+    return UnconstrainedBox(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: Button(
+            style: ButtonStyle(
+              padding: WidgetStateProperty.all(
+                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+              ),
+              backgroundColor: WidgetStateProperty.all(Colors.transparent),
+              foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
+              elevation: WidgetStateProperty.all(0),
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(borderRadius),
+                ),
               ),
             ),
-          ),
-          onPressed:
-              (requestState == RequestStateEnum.loading) ? null : onPressed,
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: paddingSize.horizontalSize,
-            ),
-            child: AdaptiveButtonContent(
-              textOverflow: textOverflow,
-              requestState: requestState,
-              suffixIcon: suffixIcon,
-              prefixIcon: prefixIcon,
-              title: title,
-              buttonType: buttonType,
-              icon: baseIcon,
-              paddingSize: paddingSize,
-              contentColorMode:
-                  isDefaultTextButton
-                      ? ContentColorMode.defaultMode
-                      : ContentColorMode.accentMode,
+            onPressed:
+                (requestState == RequestStateEnum.loading) ? null : onPressed,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: paddingSize.horizontalSize,
+              ),
+              child: AdaptiveButtonContent(
+                textOverflow: textOverflow,
+                requestState: requestState,
+                suffixIcon: suffixIcon,
+                prefixIcon: prefixIcon,
+                title: title,
+                buttonType: buttonType,
+                icon: baseIcon,
+                paddingSize: paddingSize,
+                contentColorMode:
+                    isDefaultTextButton
+                        ? ContentColorMode.defaultMode
+                        : ContentColorMode.accentMode,
+              ),
             ),
           ),
         ),
