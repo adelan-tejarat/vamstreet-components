@@ -1,5 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/app_styles.dart';
+import 'package:vamstreet_components/src/core/pallets/colors/app_colors.dart';
 
 /// ## [AppThemeData] Class Documentation
 ///
@@ -105,7 +106,7 @@ class AppThemeData {
     AccentPallet.dark.darkBlue,
   ];
 
-  static FluentThemeData lightTheme(Color selectedAccentColor) =>
+  static FluentThemeData lightTheme(Color selectedAccentColor,{Color? scaffoldBackgroundColor}) =>
       FluentThemeData(
         brightness: Brightness.light,
         typography: typography,
@@ -114,9 +115,10 @@ class AppThemeData {
           OnAccentPallet.lightPallet(selectedAccentColor),
         ],
         accentColor: selectedAccentColor.toAccentColor(),
+        scaffoldBackgroundColor: scaffoldBackgroundColor??AppColors.lightScaffoldBackground
       );
 
-  static FluentThemeData darkTheme(Color selectedAccentColor) =>
+  static FluentThemeData darkTheme(Color selectedAccentColor,{Color? scaffoldBackgroundColor}) =>
       FluentThemeData(
         brightness: Brightness.dark,
         typography: typography,
@@ -125,6 +127,7 @@ class AppThemeData {
           OnAccentPallet.darkPallet(selectedAccentColor),
         ],
         accentColor: selectedAccentColor.toAccentColor(),
+        scaffoldBackgroundColor: scaffoldBackgroundColor??AppColors.darkScaffoldBackground
       );
 
   static Typography typography = const Typography.raw(
