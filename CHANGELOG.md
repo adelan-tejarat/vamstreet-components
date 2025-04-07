@@ -1,3 +1,7 @@
+# 1.4.0+6
+- [Fix]: Adjust button width to match content length [#9](https://github.com/adelan-tejarat/vamstreet-components/pull/10)
+  - fix(buttons): set intrinsic width based on content
+
 # 1.3.0+5
 - [Refactor]: Change Background Color According Figma Design   [#7](https://github.com/adelan-tejarat/vamstreet-components/pull/8)
   - refactor(core): set `scaffoldBackgroundColor` for dark/light modes
