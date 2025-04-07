@@ -1,5 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/app_styles.dart';
+import 'package:vamstreet_components/src/core/pallets/colors/app_colors.dart';
 
 /// ## [AppThemeData] Class Documentation
 ///
@@ -105,27 +106,35 @@ class AppThemeData {
     AccentPallet.dark.darkBlue,
   ];
 
-  static FluentThemeData lightTheme(Color selectedAccentColor) =>
-      FluentThemeData(
-        brightness: Brightness.light,
-        typography: typography,
-        extensions: [
-          ...lightExtensions.where((ext) => ext is! OnAccentPallet),
-          OnAccentPallet.lightPallet(selectedAccentColor),
-        ],
-        accentColor: selectedAccentColor.toAccentColor(),
-      );
+  static FluentThemeData lightTheme(
+    Color selectedAccentColor, {
+    Color? scaffoldBackgroundColor,
+  }) => FluentThemeData(
+    brightness: Brightness.light,
+    typography: typography,
+    extensions: [
+      ...lightExtensions.where((ext) => ext is! OnAccentPallet),
+      OnAccentPallet.lightPallet(selectedAccentColor),
+    ],
+    accentColor: selectedAccentColor.toAccentColor(),
+    scaffoldBackgroundColor:
+        scaffoldBackgroundColor ?? AppColors.lightScaffoldBackground,
+  );
 
-  static FluentThemeData darkTheme(Color selectedAccentColor) =>
-      FluentThemeData(
-        brightness: Brightness.dark,
-        typography: typography,
-        extensions: [
-          ...darkExtensions.where((ext) => ext is! OnAccentPallet),
-          OnAccentPallet.darkPallet(selectedAccentColor),
-        ],
-        accentColor: selectedAccentColor.toAccentColor(),
-      );
+  static FluentThemeData darkTheme(
+    Color selectedAccentColor, {
+    Color? scaffoldBackgroundColor,
+  }) => FluentThemeData(
+    brightness: Brightness.dark,
+    typography: typography,
+    extensions: [
+      ...darkExtensions.where((ext) => ext is! OnAccentPallet),
+      OnAccentPallet.darkPallet(selectedAccentColor),
+    ],
+    accentColor: selectedAccentColor.toAccentColor(),
+    scaffoldBackgroundColor:
+        scaffoldBackgroundColor ?? AppColors.darkScaffoldBackground,
+  );
 
   static Typography typography = const Typography.raw(
     caption: InterTextStyles.captionMedium,

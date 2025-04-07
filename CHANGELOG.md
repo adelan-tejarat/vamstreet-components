@@ -1,3 +1,7 @@
+# 1.3.0+5
+- [Refactor]: Change Background Color According Figma Design   [#7](https://github.com/adelan-tejarat/vamstreet-components/pull/8)
+  - refactor(core): set `scaffoldBackgroundColor` for dark/light modes
+
 # 1.2.0+4
 - [Refactor]: Refactor font height for alignment text in components  [#5](https://github.com/adelan-tejarat/vamstreet-components/pull/6)
 
