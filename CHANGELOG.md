@@ -1,3 +1,7 @@
+# 1.5.0+7
+- [Refactor]: Fix expand in width for buttons [#11](https://github.com/adelan-tejarat/vamstreet-components/pull/12)
+  - refactor(buttons): fix expand in width for buttons
+
 # 1.4.0+6
 - [Fix]: Adjust button width to match content length [#9](https://github.com/adelan-tejarat/vamstreet-components/pull/10)
   - fix(buttons): set intrinsic width based on content

@@ -1,54 +1,38 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
+import 'package:vamstreet_components/src/core/widgets/enable_intrinsic_width.dart'
+    show EnableIntrinsicWidth;
 import 'package:vamstreet_components/src/features/main/language/core/localization_extension.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_text_button/adaptive_text_button.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-/// ## [adaptiveTextButtonUseCase] Function Documentation
+/// ## [adaptiveTextButtonUseCase] Widget Documentation
 ///
-/// The `adaptiveTextButtonUseCase` function demonstrates the use of the `AdaptiveTextButton` widget in a Widgetbook use case.
-/// It allows customization of the button's appearance, behavior, and state through the use of knobs.
+/// The adaptiveTextButtonUseCase is a dynamic widget for previewing and testing
+/// various configurations of the AdaptiveTextButton using the Widgetbook knobs feature.
 ///
-/// ### Properties:
+/// ### Purpose:
+/// Provides an interactive UI for experimenting with AdaptiveTextButton properties
+/// in a Widgetbook environment, useful for testing and visualizing UI behaviors.
 ///
-/// - **[requestState]** (RequestStateEnum):
-///   - The state of the button, which can be loaded, loading, or error.
+/// ### Parameters (from knobs):
+/// - Request State [requestState]: Defines the current loading state of the button (e.g., loaded, loading).
+/// - Default Text Style [isDefaultTextButton]: Applies default text styling when true.
+/// - Button Text [text] : The label text displayed on the button.
+/// - Padding Size  [paddingSize] : Controls internal horizontal padding (e.g., min, medium).
+/// - Button Type [buttonType] : Defines button layout (e.g., titleOnly, iconAndTitle).
+/// - Prefix Icon [prefixIcon] : Icon shown before text for specific button types.
+/// - Suffix Icon [suffixIcon]: Icon shown after text for specific button types.
+/// - Base Icon [baseIcon] : Icon used when buttonType is iconOnly.
+/// - Min Height [minHeight] : Minimum height of the button (default is 32).
+/// - Max Width [maxWidth] : Maximum width of the button (default is 0).
+/// - Border Radius [borderRadius] : Rounding of the button's corners.
+/// - Text Overflow [textOverflow] : How to handle text overflow (e.g., ellipsis).
+/// - Expand to Full Width [expandToFullWidth] : Expands the button to full width if true.
 ///
-/// - **[isDefaultTextButton]** (`bool`):
-///   - Toggles whether the button should use the default Text style.
-///
-/// - **[isDisabled]** (bool):
-///   - A boolean value that determines whether the button is disabled.
-///
-/// - **[text]** (String):
-///   - The text label to display on the button.
-///
-/// - **[paddingSize]** (PaddingSizeEnum):
-///   - The padding size to apply around the button content.
-///
-/// - **[buttonType]** (ButtonTypeEnum):
-///   - Specifies the layout of the button, including whether it includes text, icons, or both.
-///
-/// - **[prefixIcon]** (IconData?):
-///   - The icon to display before the button text, used when the button type includes an icon at the start.
-///
-/// - **[suffixIcon]** (IconData?):
-///   - The icon to display after the button text, used when the button type includes an icon at the end.
-///
-/// - **[textOverflow]** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
-///
-/// - **[minHeight]** (`double`): The minimum height allowed for the button and Defaults to `32`.
-///
-/// - **[maxWidth]** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
-///
-/// - **[borderRadius]** (`double`): Controls the corner rounding of the button's border.
-///
-/// - **[baseIcon]** (IconData?):
-///   - The icon to display on the button when only an icon is shown (icon-only button).
-
 @UseCase(name: 'Adaptive Text Button with Knobs', type: AdaptiveTextButton)
 Widget adaptiveTextButtonUseCase(BuildContext context) {
   final requestState = context.knobs.list<RequestStateEnum>(
@@ -105,7 +89,7 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
 
   final maxWidth = context.knobs.double.slider(
     label: 'Max Width',
-    initialValue: 0,
+    initialValue: 500,
     min: 0,
     max: 500,
   );
@@ -123,8 +107,14 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
     initialOption: TextOverflow.ellipsis,
   );
 
+  final expandToFullWidth = context.knobs.boolean(
+    label: 'Expand to Full Width',
+    initialValue: false,
+  );
+
   return IntrinsicHeight(
-    child: IntrinsicWidth(
+    child: EnableIntrinsicWidth(
+      expandToFullWidth: expandToFullWidth,
       child: AdaptiveTextButton(
         title:
             buttonType == ButtonTypeEnum.titleOnly ||
@@ -155,6 +145,7 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
         paddingSize: paddingSize,
         textOverflow: textOverflow,
         minHeight: minHeight,
+        expandToFullWidth: expandToFullWidth,
         maxWidth: maxWidth,
         borderRadius: borderRadius,
         isDefaultTextButton: isDefaultTextButton,

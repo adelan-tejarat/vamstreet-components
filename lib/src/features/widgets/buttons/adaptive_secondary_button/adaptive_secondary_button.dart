@@ -1,78 +1,44 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
+import 'package:vamstreet_components/src/core/widgets/responsive_width_container.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/utils/methods/get_fluent_outlined_button_style_method.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 
-/// ## [AdaptiveSecondaryButton] Class Documentation
+/// ## [AdaptiveTextButton] Class Documentation
 ///
-/// The `AdaptiveSecondaryButton` class is a customizable secondary button designed for various UI configurations.
-/// It supports different styles, including outlined and adaptive content variations.
+/// The `AdaptiveTextButton` class is a customizable secondary button designed to adapt to different UI scenarios.
+/// It supports multiple layout styles, including text-only, icon-only, and combinations of text and icons.
 ///
-/// ### Properties:
+/// ### Properties
+/// - [requestState]: Controls the loading or active state of the button.
+/// - [onPressed]: Callback triggered when the button is tapped.
+/// - [title]: Optional text label shown on the button.
+/// - [prefixIcon] / [suffixIcon]: Optional icons before or after the title.
+/// - [baseIcon]: Icon used in icon-only mode.
+/// - [textOverflow]: Defines how the text behaves when overflowed.
+/// - [expandToFullWidth]: If true, button stretches to full width of its container.
+/// - [minHeight] / [maxWidth]: Size constraints applied to the button.
+/// - [borderRadius]: Corner rounding value for the button.
+/// - [buttonType]: Defines the visual layout of the button (e.g., titleOnly, iconOnly).
+/// - [paddingSize]: Internal horizontal padding of the button.
+/// - [isDefaultTextButton]: Determines if the button uses the default text color style.
 ///
-/// - **[requestState]** (`RequestStateEnum`):
-///   - Defines the state of the button (e.g., loading, success, failure).
-///   - Determines if the button should be disabled.
-///
-/// - **[onPressed]** (`Function()?`):
-///   - Callback function triggered when the button is pressed.
-///   - Disabled if `requestState` is `loading`.
-///
-/// - **[suffixIcon]** (`IconData?`):
-///   - An optional suffix icon displayed at the end of the button.
-///
-/// - **[prefixIcon]** (`IconData?`):
-///   - An optional prefix icon displayed at the start of the button.
-///
-/// - **[title]** (`String?`):
-///   - The text label of the button.
-///   - Optional and used in applicable button configurations.
-///
-/// - [borderRadius] (`double`):
-///   - Controls the corner rounding of the button's border.
-///
-/// - **[minHeight]** (`double`): The minimum height allowed for the button and Defaults to `32`.
-///
-/// - **[maxWidth]** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
-///
-/// - **[textOverflow]** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
-///
-/// - **[buttonType]** (`ButtonTypeEnum`):
-///   - Specifies the type of button (e.g., title-only, icon-only, both).
-///
-/// - **[baseIcon]** (`IconData?`):
-///   - The primary icon used when the button is of type `iconOnly`.
-///
-/// - **[paddingSize]** (`PaddingSizeEnum`):
-///   - Determines the padding size of the button.
-///
-/// - **[isDefaultOutlinedButton]** (`bool`):
-///   - Specifies whether the button should use the default outlined button style.
-///
-/// ### Factory Methods:
-///
-/// - **[AdaptiveSecondaryButton.createTitleOnly]**:
-///   - Creates a button with only a title.
-///
-/// - **[AdaptiveSecondaryButton.createIconAndTitle]**:
-///   - Creates a button with a title and a leading icon.
-///
-/// - **[AdaptiveSecondaryButton.createTitleAndIcon]**:
-///   - Creates a button with a title and a trailing icon.
-///
-/// - **[createIconTitleAndIcon]**:
-///   - Creates a button with both leading and trailing icons along with a title.
-///
-/// - **[AdaptiveSecondaryButton.createIconOnly]**:
-///   - Creates a button that contains only an icon.
+/// ### Factory Constructors:
+/// These factory methods create `AdaptiveTextButton` instances with predefined button types:
+/// - [AdaptiveTextButton.createTitleOnly]: A button with only text (title).
+/// - [AdaptiveTextButton.createIconAndTitle]: A button with an icon before the text.
+/// - [AdaptiveTextButton.createTitleAndIcon]: A button with the text followed by an icon.
+/// - [AdaptiveTextButton.createIconTitleAndIcon]: A button with an icon before and after the text.
+/// - [AdaptiveTextButton.createIconOnly]: A button that displays only an icon.
 ///
 class AdaptiveSecondaryButton extends StatelessWidget {
   const AdaptiveSecondaryButton({
     super.key,
     required this.requestState,
     this.onPressed,
+    this.expandToFullWidth = false,
     this.suffixIcon,
     this.prefixIcon,
     this.borderRadius = 4,
@@ -87,7 +53,8 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   });
 
   final RequestStateEnum requestState;
-  final Function()? onPressed;
+  final VoidCallback? onPressed;
+  final bool? expandToFullWidth;
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
@@ -102,35 +69,39 @@ class AdaptiveSecondaryButton extends StatelessWidget {
 
   // Factory methods to create buttons with specific button types
   factory AdaptiveSecondaryButton.createTitleOnly({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
+      expandToFullWidth: expandToFullWidth!,
       title: title,
-      paddingSize: paddingSize,
+      paddingSize: paddingSize!,
       buttonType: ButtonTypeEnum.titleOnly,
       isDefaultOutlinedButton: isDefaultOutlinedButton,
     );
   }
 
   factory AdaptiveSecondaryButton.createIconAndTitle({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
+    String? title = '',
     bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize,
+      expandToFullWidth: expandToFullWidth,
+      paddingSize: paddingSize!,
       buttonType: ButtonTypeEnum.iconAndTitle,
       prefixIcon: prefixIcon,
       isDefaultOutlinedButton: isDefaultOutlinedButton,
@@ -138,18 +109,20 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   }
 
   factory AdaptiveSecondaryButton.createTitleAndIcon({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
+    String? title = '',
     bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize,
+      expandToFullWidth: expandToFullWidth,
+      paddingSize: paddingSize!,
       buttonType: ButtonTypeEnum.titleAndIcon,
       suffixIcon: suffixIcon,
       isDefaultOutlinedButton: isDefaultOutlinedButton,
@@ -157,19 +130,21 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   }
 
   factory AdaptiveSecondaryButton.createIconTitleAndIcon({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
+    String? title = '',
     bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize,
+      paddingSize: paddingSize!,
+      expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
@@ -178,16 +153,18 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   }
 
   factory AdaptiveSecondaryButton.createIconOnly({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? baseIcon,
     bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
-      paddingSize: paddingSize,
+      paddingSize: paddingSize!,
+      expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconOnly,
       baseIcon: baseIcon,
       isDefaultOutlinedButton: isDefaultOutlinedButton,
@@ -196,7 +173,8 @@ class AdaptiveSecondaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UnconstrainedBox(
+    return ResponsiveWidthContainer(
+      expandToFullWidth: expandToFullWidth!,
       child: ConstrainedBox(
         constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
         child: MouseRegion(
