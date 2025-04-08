@@ -16,10 +16,12 @@ import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_secon
     as _i3;
 import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_text_button/adaptive_text_button_usecase.dart'
     as _i4;
-import 'package:vamstreet_components/src/features/widgets/chip_text_box/chip_text_box_use_case.dart'
+import 'package:vamstreet_components/src/features/widgets/checkboxes/adaptive_checkbox_usecase.dart'
     as _i5;
-import 'package:vamstreet_components/src/features/widgets/custom_text/custom_text_usecase.dart'
+import 'package:vamstreet_components/src/features/widgets/chip_text_box/chip_text_box_use_case.dart'
     as _i6;
+import 'package:vamstreet_components/src/features/widgets/custom_text/custom_text_usecase.dart'
+    as _i7;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
@@ -71,13 +73,25 @@ final directories = <_i1.WidgetbookNode>[
             ],
           ),
           _i1.WidgetbookFolder(
+            name: 'checkboxes',
+            children: [
+              _i1.WidgetbookLeafComponent(
+                name: 'AdaptiveCheckbox',
+                useCase: _i1.WidgetbookUseCase(
+                  name: 'Adaptive Checkbox',
+                  builder: _i5.adaptiveCheckboxUseCase,
+                ),
+              ),
+            ],
+          ),
+          _i1.WidgetbookFolder(
             name: 'chip_text_box',
             children: [
               _i1.WidgetbookLeafComponent(
                 name: 'ChipTextBox',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'ChipTextBox Customization',
-                  builder: _i5.chipTextBoxUseCase,
+                  builder: _i6.chipTextBoxUseCase,
                 ),
               ),
             ],
@@ -89,7 +103,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'CustomTextWidget',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Select the text to display from the dropdown',
-                  builder: _i6.customTextWidgetUseCase,
+                  builder: _i7.customTextWidgetUseCase,
                 ),
               ),
             ],

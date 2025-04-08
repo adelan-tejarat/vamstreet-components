@@ -2,3 +2,4 @@ export 'package:vamstreet_components/src/features/widgets/chip_text_box/chip_tex
 export 'package:vamstreet_components/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button.dart';
 export 'package:vamstreet_components/src/features/widgets/buttons/adaptive_secondary_button/adaptive_secondary_button.dart';
 export 'package:vamstreet_components/src/features/widgets/buttons/adaptive_text_button/adaptive_text_button.dart';
+export 'package:vamstreet_components/src/features/widgets/checkboxes/adaptive_checkbox_checkbox.dart';
