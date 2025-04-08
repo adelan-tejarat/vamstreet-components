@@ -110,14 +110,18 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
     initialOption: TextOverflow.ellipsis,
   );
 
-  final expandToFullWidth = context.knobs.boolean(
-    label: 'Expand to Full Width',
-    initialValue: false,
-  );
+  final expandToFullWidth =
+      // NOTE: for fix debug overflow in `EnableIntrinsicWidth` and show correct in widgetBook  this value changed to reverse mode
+      !context.knobs.boolean(
+        label: 'Expand to Full Width',
+        initialValue: false,
+      );
 
   return IntrinsicHeight(
     child: EnableIntrinsicWidth(
-      expandToFullWidth: expandToFullWidth,
+      expandToFullWidth:
+          // NOTE: for fix debug overflow in `EnableIntrinsicWidth` and show correct in widgetBook  this value changed to reverse mode
+          !expandToFullWidth,
       child: AdaptivePrimaryButton(
         title:
             buttonType == ButtonTypeEnum.titleOnly ||

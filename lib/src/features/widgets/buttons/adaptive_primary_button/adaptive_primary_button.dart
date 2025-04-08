@@ -56,15 +56,15 @@ class AdaptivePrimaryButton extends StatelessWidget {
   factory AdaptivePrimaryButton.createIconOnly({
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? baseIcon,
   }) {
     return AdaptivePrimaryButton(
       requestState: requestState!,
       onPressed: onPressed,
       expandToFullWidth: expandToFullWidth,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconOnly,
       baseIcon: baseIcon,
     );
@@ -74,9 +74,8 @@ class AdaptivePrimaryButton extends StatelessWidget {
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
     String? title = '',
-    bool? expandToFullWidth = false,
-
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
   }) {
@@ -85,7 +84,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       expandToFullWidth: expandToFullWidth,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
@@ -96,8 +95,8 @@ class AdaptivePrimaryButton extends StatelessWidget {
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
     String? title = '',
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
   }) {
     return AdaptivePrimaryButton(
@@ -105,7 +104,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       expandToFullWidth: expandToFullWidth,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleAndIcon,
       suffixIcon: suffixIcon,
     );
@@ -115,8 +114,8 @@ class AdaptivePrimaryButton extends StatelessWidget {
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
     String? title = '',
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
   }) {
     return AdaptivePrimaryButton(
@@ -124,7 +123,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       expandToFullWidth: expandToFullWidth,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconAndTitle,
       prefixIcon: prefixIcon,
     );
@@ -135,15 +134,15 @@ class AdaptivePrimaryButton extends StatelessWidget {
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
     String? title = '',
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
   }) {
     return AdaptivePrimaryButton(
       requestState: requestState!,
       onPressed: onPressed,
       title: title,
       expandToFullWidth: expandToFullWidth,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleOnly,
     );
   }

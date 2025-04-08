@@ -23,7 +23,7 @@ import 'package:vamstreet_components/src/features/widgets/buttons/core/common/wi
 /// - [borderRadius]: Corner rounding value for the button.
 /// - [buttonType]: Defines the visual layout of the button (e.g., titleOnly, iconOnly).
 /// - [paddingSize]: Internal horizontal padding of the button.
-/// - [isDefaultTextButton]: Determines if the button uses the default text color style.
+/// - [isDefaultOutlinedButton]: Determines if the button uses the default text color style.
 ///
 /// ### Factory Constructors:
 /// These factory methods create `AdaptiveTextButton` instances with predefined button types:
@@ -71,17 +71,17 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createTitleOnly({
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     String? title = '',
     bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
       requestState: requestState!,
       onPressed: onPressed,
-      expandToFullWidth: expandToFullWidth!,
+      expandToFullWidth: expandToFullWidth,
       title: title,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleOnly,
       isDefaultOutlinedButton: isDefaultOutlinedButton,
     );
@@ -90,8 +90,8 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createIconAndTitle({
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     String? title = '',
     bool isDefaultOutlinedButton = false,
@@ -101,7 +101,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       expandToFullWidth: expandToFullWidth,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconAndTitle,
       prefixIcon: prefixIcon,
       isDefaultOutlinedButton: isDefaultOutlinedButton,
@@ -111,8 +111,8 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createTitleAndIcon({
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
     String? title = '',
     bool isDefaultOutlinedButton = false,
@@ -122,7 +122,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       expandToFullWidth: expandToFullWidth,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleAndIcon,
       suffixIcon: suffixIcon,
       isDefaultOutlinedButton: isDefaultOutlinedButton,
@@ -132,8 +132,8 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createIconTitleAndIcon({
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
     String? title = '',
@@ -143,7 +143,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
       requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
@@ -155,15 +155,15 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createIconOnly({
     RequestStateEnum? requestState = RequestStateEnum.initial,
     VoidCallback? onPressed,
-    bool? expandToFullWidth = false,
-    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    bool expandToFullWidth = false,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? baseIcon,
     bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
       requestState: requestState!,
       onPressed: onPressed,
-      paddingSize: paddingSize!,
+      paddingSize: paddingSize,
       expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconOnly,
       baseIcon: baseIcon,
