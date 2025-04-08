@@ -114,17 +114,17 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
   );
 
   final expandToFullWidth =
-  // NOTE: for fix debug overflow in `EnableIntrinsicWidth` and show correct in widgetBook  this value changed to reverse mode
-  !context.knobs.boolean(
-    label: 'Expand to Full Width',
-    initialValue: false,
-  );
+      // NOTE: for fix debug overflow in `EnableIntrinsicWidth` and show correct in widgetBook  this value changed to reverse mode
+      !context.knobs.boolean(
+        label: 'Expand to Full Width',
+        initialValue: false,
+      );
 
   return IntrinsicHeight(
     child: EnableIntrinsicWidth(
       expandToFullWidth:
-      // NOTE: for fix debug overflow in `EnableIntrinsicWidth` and show correct in widgetBook  this value changed to reverse mode
-      !expandToFullWidth,
+          // NOTE: for fix debug overflow in `EnableIntrinsicWidth` and show correct in widgetBook  this value changed to reverse mode
+          !expandToFullWidth,
       child: AdaptiveSecondaryButton(
         title:
             buttonType == ButtonTypeEnum.titleOnly ||
