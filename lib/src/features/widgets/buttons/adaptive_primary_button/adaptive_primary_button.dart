@@ -39,19 +39,19 @@ import 'package:vamstreet_components/src/features/widgets/buttons/core/utils/met
 class AdaptivePrimaryButton extends StatelessWidget {
   const AdaptivePrimaryButton({
     super.key,
-    required this.requestState,
+    this.requestState = RequestStateEnum.initial,
     this.onPressed,
     this.expandToFullWidth = false,
     this.suffixIcon,
     this.prefixIcon,
     this.title = '',
     this.textOverflow,
-    this.minHeight = 32,
+    this.minHeight = 40,
     this.maxWidth = double.infinity,
-    this.borderRadius = 4,
-    required this.buttonType,
+    this.borderRadius = 8,
+    this.buttonType = ButtonTypeEnum.titleOnly,
     this.baseIcon,
-    required this.paddingSize,
+    this.paddingSize = PaddingSizeEnum.medium,
   });
   factory AdaptivePrimaryButton.createIconOnly({
     RequestStateEnum? requestState = RequestStateEnum.initial,

@@ -36,19 +36,19 @@ import 'package:vamstreet_components/src/features/widgets/buttons/core/common/wi
 class AdaptiveSecondaryButton extends StatelessWidget {
   const AdaptiveSecondaryButton({
     super.key,
-    required this.requestState,
+    this.requestState = RequestStateEnum.initial,
     this.onPressed,
     this.expandToFullWidth = false,
     this.suffixIcon,
     this.prefixIcon,
-    this.borderRadius = 4,
-    this.minHeight = 32,
+    this.borderRadius = 8,
+    this.minHeight = 40,
     this.textOverflow,
     this.maxWidth = double.infinity,
     this.title = '',
-    required this.buttonType,
+    this.buttonType = ButtonTypeEnum.titleOnly,
     this.baseIcon,
-    required this.paddingSize,
+    this.paddingSize = PaddingSizeEnum.medium,
     this.isDefaultOutlinedButton = false,
   });
 

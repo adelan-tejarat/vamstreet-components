@@ -24,6 +24,6 @@ class ResponsiveWidthContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return expandToFullWidth ? UnconstrainedBox(child: child) : child;
+    return expandToFullWidth ? child : UnconstrainedBox(child: child);
   }
 }
