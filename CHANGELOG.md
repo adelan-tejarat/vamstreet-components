@@ -1,3 +1,8 @@
+# 1.7.0+9
+- [Refactor]: Fix/fix null safety in expandToFullWidth property of buttons  [#11](https://github.com/adelan-tejarat/vamstreet-components/pull/14)
+  - fix: fix debug overflow in EnableIntrinsicWidth and show correct in widgetBook
+  - fix(buttons): fix null safety bug in expandToFullWidth property of buttons
+
 # 1.6.0+8
 - [Refactor]: Add Default Values to Simplify Button Widgets Usage  [#11](https://github.com/adelan-tejarat/vamstreet-components/pull/13)
   - refactor(buttons): set default values for certain properties in button widgets to simplify button definition
