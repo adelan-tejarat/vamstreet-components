@@ -1,7 +1,8 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
-import 'package:vamstreet_components/src/core/widgets/enable_intrinsic_width.dart' show EnableIntrinsicWidth;
+import 'package:vamstreet_components/src/core/widgets/enable_intrinsic_width.dart'
+    show EnableIntrinsicWidth;
 import 'package:vamstreet_components/src/features/main/language/core/localization_extension.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';

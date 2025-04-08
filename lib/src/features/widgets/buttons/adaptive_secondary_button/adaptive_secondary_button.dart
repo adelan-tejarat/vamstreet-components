@@ -136,13 +136,15 @@ class AdaptiveSecondaryButton extends StatelessWidget {
     PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
-    String? title = '', bool isDefaultOutlinedButton = false,
+    String? title = '',
+    bool isDefaultOutlinedButton = false,
   }) {
     return AdaptiveSecondaryButton(
       requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize!,expandToFullWidth: expandToFullWidth,
+      paddingSize: paddingSize!,
+      expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,

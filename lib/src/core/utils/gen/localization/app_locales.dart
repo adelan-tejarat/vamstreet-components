@@ -17,9 +17,5 @@ class AppLocales {
   static const esESLocale = Locale('es', 'ES');
 
   /// Define the list of supported locales in the desired order
-  static const supportedLocales = [
-    enUSLocale,
-    frFRLocale,
-    esESLocale,
-  ];
+  static const supportedLocales = [enUSLocale, frFRLocale, esESLocale];
 }

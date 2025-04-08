@@ -2,7 +2,8 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/app_styles.dart';
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
-import 'package:vamstreet_components/src/core/widgets/responsive_width_container.dart' show ResponsiveWidthContainer;
+import 'package:vamstreet_components/src/core/widgets/responsive_width_container.dart'
+    show ResponsiveWidthContainer;
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 
@@ -73,7 +74,8 @@ class AdaptiveTextButton extends StatelessWidget {
     VoidCallback? onPressed,
     bool? expandToFullWidth = false,
     PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
-    String? title = '',  bool isDefaultTextButton = false,
+    String? title = '',
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState!,
@@ -92,7 +94,8 @@ class AdaptiveTextButton extends StatelessWidget {
     bool? expandToFullWidth = false,
     PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
-    String? title = '',   bool isDefaultTextButton = false,
+    String? title = '',
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState!,
@@ -112,7 +115,8 @@ class AdaptiveTextButton extends StatelessWidget {
     bool? expandToFullWidth = false,
     PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
-    String? title = '',  bool isDefaultTextButton = false,
+    String? title = '',
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState!,
@@ -133,13 +137,15 @@ class AdaptiveTextButton extends StatelessWidget {
     PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
-    String? title = '',  bool isDefaultTextButton = false,
+    String? title = '',
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize!,expandToFullWidth: expandToFullWidth,
+      paddingSize: paddingSize!,
+      expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
