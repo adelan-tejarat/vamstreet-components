@@ -1,31 +1,36 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
+import 'package:vamstreet_components/src/core/widgets/enable_intrinsic_width.dart' show EnableIntrinsicWidth;
 import 'package:vamstreet_components/src/features/main/language/core/localization_extension.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-/// ## adaptivePrimaryButtonUseCase Widget Documentation
+/// ## [adaptivePrimaryButtonUseCase] Widget Documentation
 ///
-/// The `adaptivePrimaryButtonUseCase` is a dynamic widget designed for testing and previewing different variations of the `AdaptivePrimaryButton` widget using the **Widgetbook** framework with "knobs." It allows users to experiment with different properties such as `requestState`, `isOutlined`, `buttonType`, and more, to visualize how the button behaves with different configurations.
+/// The adaptivePrimaryButtonUseCase is a dynamic widget for previewing and
+/// testing various configurations of the AdaptivePrimaryButton using the Widgetbook knobs feature.
 ///
 /// ### Purpose:
-/// This widget provides a customizable UI to visualize various configurations of the `AdaptivePrimaryButton` and is useful for documentation and testing purposes in a Widgetbook environment. It leverages the `Widgetbook` framework's `knobs` feature, allowing users to change parameters interactively during runtime.
+/// Provides an interactive UI for experimenting with AdaptivePrimaryButton properties
+/// in a Widgetbook environment, useful for testing and visualizing UI behaviors.
 ///
 /// ### Parameters (from knobs):
-/// - **Request State (`requestState`)**: A list of options (e.g., `loaded`, `loading`, etc.) representing the current state of the request. It controls whether the button shows as loading or in its normal state.
-/// - **Button Text (`text`)**: A string for the text displayed on the button.
-/// - **Padding Size (`paddingSize`)**: A list of predefined padding options (e.g., `min`, `medium`, `large`) to control the horizontal padding inside the button.
-/// - **Button Type (`buttonType`)**: A list of button types (e.g., `titleOnly`, `iconAndTitle`, `iconTitleAndIcon`, etc.) to adjust the button's layout (text and/or icon).
-/// - **Prefix Icon (`prefixIcon`)**: An optional knob to choose an icon that will be displayed before the button's text (only applicable for certain button types).
-/// - **Suffix Icon (`suffixIcon`)**: An optional knob to choose an icon that will be displayed after the button's text (only applicable for certain button types).
-/// - **`textOverflow`** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
-/// - **`minHeight`** (`double`): The minimum height allowed for the button and Defaults to `32`.
-/// - **`maxWidth`** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
-/// - **`borderRadius`** (`double`): Controls the corner rounding of the button's border.
-/// - **Base Icon (`baseIcon`)**: An optional knob for an icon when the button displays only an icon (for `iconOnly` button type).
+/// - Request State [requestState]: Defines the current loading state of the button (e.g., loaded, loading).
+/// - Disable Button [isDisabled] : Disables the button when true.
+/// - Button Text [text] : The label text displayed on the button.
+/// - Padding Size  [paddingSize] : Controls internal horizontal padding (e.g., min, medium).
+/// - Button Type [buttonType] : Defines button layout (e.g., titleOnly, iconAndTitle).
+/// - Prefix Icon [prefixIcon] : Icon shown before text for specific button types.
+/// - Suffix Icon [suffixIcon]: Icon shown after text for specific button types.
+/// - Base Icon [baseIcon] : Icon used when buttonType is iconOnly.
+/// - Min Height [minHeight] : Minimum height of the button (default is 32).
+/// - Max Width [maxWidth] : Maximum width of the button (default is 200).
+/// - Border Radius [borderRadius] : Rounding of the button's corners.
+/// - Text Overflow [textOverflow] : How to handle text overflow (e.g., ellipsis).
+/// - Expand to Full Width [expandToFullWidth] : Expands the button to full width if true.
 ///
 @UseCase(
   name: 'Adaptive Primary Button with Knobs',
@@ -86,7 +91,7 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
 
   final maxWidth = context.knobs.double.slider(
     label: 'Max Width',
-    initialValue: 200,
+    initialValue: 500,
     min: 0,
     max: 500,
   );
@@ -104,8 +109,14 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
     initialOption: TextOverflow.ellipsis,
   );
 
+  final expandToFullWidth = context.knobs.boolean(
+    label: 'Expand to Full Width',
+    initialValue: false,
+  );
+
   return IntrinsicHeight(
-    child: IntrinsicWidth(
+    child: EnableIntrinsicWidth(
+      expandToFullWidth: expandToFullWidth,
       child: AdaptivePrimaryButton(
         title:
             buttonType == ButtonTypeEnum.titleOnly ||
@@ -134,6 +145,7 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
                   debugPrint('Adaptive Primary Button Pressed');
                 },
         paddingSize: paddingSize,
+        expandToFullWidth: expandToFullWidth,
         textOverflow: textOverflow,
         minHeight: minHeight,
         maxWidth: maxWidth,

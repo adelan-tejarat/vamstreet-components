@@ -1,59 +1,37 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
+import 'package:vamstreet_components/src/core/widgets/enable_intrinsic_width.dart';
 import 'package:vamstreet_components/src/features/main/language/core/localization_extension.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_secondary_button/adaptive_secondary_button.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-/// ## [adaptiveSecondaryButtonUseCase] Use Case Documentation
+/// ## [adaptiveSecondaryButtonUseCase] Widget Documentation
 ///
-/// This use case demonstrates the `AdaptiveSecondaryButton` with various configurable knobs using `Widgetbook`.
+/// The adaptiveSecondaryButtonUseCase is a dynamic widget for previewing and
+/// testing various configurations of the AdaptiveSecondaryButton using the Widgetbook knobs feature.
 ///
-/// ### Knobs:
+/// ### Purpose:
+/// Provides an interactive UI for experimenting with AdaptiveSecondaryButton properties
+/// in a Widgetbook environment, useful for testing and visualizing UI behaviors.
 ///
-/// - **`Request State`** (`RequestStateEnum`):
-///   - Selects the button's state (e.g., `loading`, `loaded`, `error`).
-///
-/// - **`Default Outlined Style`** (`bool`):
-///   - Toggles whether the button should use the default outlined style.
-///
-/// - **`Disable Button`** (`bool`):
-///   - Disables the button when enabled.
-///
-/// - **`Button Text`** (`String`):
-///   - Sets the displayed text for the button.
-///
-/// - **`Padding Size`** (`PaddingSizeEnum`):
-///   - Configures the button’s padding size.
-///
-/// - **`Button Type`** (`ButtonTypeEnum`):
-///   - Defines the type of button (e.g., `titleOnly`, `iconOnly`, `iconAndTitle`).
-///
-/// - **`Prefix Icon`** (`IconData?`):
-///   - Selects an optional leading icon for the button.
-///
-/// - **`Suffix Icon`** (`IconData?`):
-///   - Selects an optional trailing icon for the button.
-///
-/// - **`textOverflow`** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
-///
-/// - **`minHeight`** (`double`): The minimum height allowed for the button and Defaults to `32`.
-///
-/// - **`maxWidth`** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
-///
-/// - **`borderRadius`** (`double`): Controls the corner rounding of the button's border.
-///
-/// - **`Base Icon`** (`IconData?`):
-///   - Defines the primary icon when `iconOnly` is selected.
-///
-/// ### Behavior:
-///
-/// - Displays an `AdaptiveSecondaryButton` with user-defined configurations.
-/// - Disables the button when in `loading` state or explicitly set to `disabled`.
-/// - Uses `debugPrint` to log button press interactions.
-/// - Adjusts icons dynamically based on the selected `buttonType`.
+/// ### Parameters (from knobs):
+/// - Request State [requestState]: Defines the current loading state of the button (e.g., loaded, loading).
+/// - Default Outlined Style [isDefaultOutlinedButton]: Enables default outlined button style when true.
+/// - Disable Button [isDisabled]: Disables the button when true.
+/// - Button Text [text]: The label text displayed on the button.
+/// - Padding Size [paddingSize]: Controls internal horizontal padding (e.g., min, medium).
+/// - Button Type [buttonType]: Defines button layout (e.g., titleOnly, iconAndTitle).
+/// - Prefix Icon [prefixIcon]: Icon shown before text for specific button types.
+/// - Suffix Icon [suffixIcon]: Icon shown after text for specific button types.
+/// - Base Icon [baseIcon]: Icon used when buttonType is iconOnly.
+/// - Min Height [minHeight]: Minimum height of the button (default is 32).
+/// - Max Width [maxWidth]: Maximum width of the button (default is 200).
+/// - Border Radius [borderRadius]: Rounding of the button's corners.
+/// - Text Overflow [textOverflow]: How to handle text overflow (e.g., ellipsis).
+/// - Expand to Full Width [expandToFullWidth]: Expands the button to full width if true.
 ///
 @UseCase(
   name: 'Adaptive Secondary Button with Knobs',
@@ -117,7 +95,7 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
 
   final maxWidth = context.knobs.double.slider(
     label: 'Max Width',
-    initialValue: 200,
+    initialValue: 500,
     min: 0,
     max: 500,
   );
@@ -135,8 +113,14 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
     initialOption: TextOverflow.ellipsis,
   );
 
+  final expandToFullWidth = context.knobs.boolean(
+    label: 'Expand to Full Width',
+    initialValue: false,
+  );
+
   return IntrinsicHeight(
-    child: IntrinsicWidth(
+    child: EnableIntrinsicWidth(
+      expandToFullWidth: expandToFullWidth,
       child: AdaptiveSecondaryButton(
         title:
             buttonType == ButtonTypeEnum.titleOnly ||
@@ -168,6 +152,7 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
         textOverflow: textOverflow,
         minHeight: minHeight,
         maxWidth: maxWidth,
+        expandToFullWidth: expandToFullWidth,
         borderRadius: borderRadius,
         isDefaultOutlinedButton: isDefaultOutlinedButton,
       ),

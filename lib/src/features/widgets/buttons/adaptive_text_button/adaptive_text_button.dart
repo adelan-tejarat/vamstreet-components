@@ -2,72 +2,43 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/app_styles.dart';
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
+import 'package:vamstreet_components/src/core/widgets/responsive_width_container.dart' show ResponsiveWidthContainer;
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 
 /// ## [AdaptiveTextButton] Class Documentation
 ///
-/// The `AdaptiveTextButton` class is a customizable button widget that adapts its appearance based on different states and configurations.
-/// It allows you to create buttons with different combinations of text, icons, and states.
+/// The `AdaptiveTextButton` class is a customizable secondary button designed to adapt to different UI scenarios.
+/// It supports multiple layout styles, including text-only, icon-only, and combinations of text and icons.
 ///
-/// ### Properties:
+/// ### Properties
+/// - [requestState]: Represents the current state of the button (e.g., loading, loaded).
+/// - [onPressed]: Callback triggered when the button is tapped (disabled during loading).
+/// - [title]: Optional text label displayed on the button.
+/// - [prefixIcon] / [suffixIcon]: Optional icons placed before or after the title, depending on the layout.
+/// - [baseIcon]: Icon shown when the button is in icon-only mode.
+/// - [textOverflow]: Defines how text is rendered when it overflows the available space.
+/// - [expandToFullWidth]: If true, the button stretches to occupy the full width of its container.
+/// - [minHeight] / [maxWidth]: Sets minimum height and maximum width constraints of the button.
+/// - [borderRadius]: Defines the corner radius of the button's border.
+/// - [buttonType]: Determines the layout style of the button (e.g., titleOnly, iconAndTitle).
+/// - [paddingSize]: Defines internal horizontal padding of the button.
+/// - [isDefaultTextButton]: If true, applies the default text color styling instead of accent color.
 ///
-/// - **[requestState]** (RequestStateEnum):
-///   - Defines the current state of the button (e.g., loading, normal).
-///
-/// - **[onPressed]** (Function()?):
-///   - A callback function that gets triggered when the button is pressed.
-///
-/// - **[suffixIcon]** (IconData?):
-///   - The icon to be displayed at the end of the button, if any.
-///
-/// - **[prefixIcon]** (IconData?):
-///   - The icon to be displayed at the beginning of the button, if any.
-///
-/// - **[title]** (String?):
-///   - The text to be displayed on the button.
-///
-/// - **[textOverflow]** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
-///
-/// - **[minHeight]** (`double`): The minimum height allowed for the button and Defaults to `32`.
-///
-/// - **[maxWidth]** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
-///
-/// - **[borderRadius]** (`double`): Controls the corner rounding of the button's border.
-///
-/// - **[buttonType]** (ButtonTypeEnum):
-///   - Specifies the type of button, influencing the layout of the button content (e.g., title only, icon and title, etc.).
-///
-/// - **[baseIcon]** (IconData?):
-///   - The icon to be used if the button is an icon-only button.
-///
-/// - **[paddingSize]** (PaddingSizeEnum):
-///   - Specifies the padding size to be applied around the button content.
-/// - **[isDefaultTextButton]** (`bool`):
-///   - Specifies whether the button should use the default Text button style.
-///
-/// ### Factory Methods:
-///
-/// - **[AdaptiveTextButton.createTitleOnly]**:
-///   - Creates a button with only a title and no icons.
-///
-/// - **[AdaptiveTextButton.createIconAndTitle]**:
-///   - Creates a button with a prefix icon and a title.
-///
-/// - **[AdaptiveTextButton.createTitleAndIcon]**:
-///   - Creates a button with a title and a suffix icon.
-///
-/// - **[AdaptiveTextButton.createIconTitleAndIcon]**:
-///   - Creates a button with both a prefix icon, a title, and a suffix icon.
-///
-/// - **[AdaptiveTextButton.createIconOnly]**:
-///   - Creates a button with only an icon and no text.
+/// ### Factory Constructors:
+/// These factory methods create `AdaptiveTextButton` instances with predefined button types:
+/// - [AdaptiveTextButton.createTitleOnly]: A button that displays only a text title.
+/// - [AdaptiveTextButton.createIconAndTitle]: A button with an icon before the text.
+/// - [AdaptiveTextButton.createTitleAndIcon]: A button with the text followed by an icon.
+/// - [AdaptiveTextButton.createIconTitleAndIcon]: A button with an icon before and after the text.
+/// - [AdaptiveTextButton.createIconOnly]: A button that displays only an icon.
 ///
 class AdaptiveTextButton extends StatelessWidget {
   const AdaptiveTextButton({
     super.key,
     required this.requestState,
     this.onPressed,
+    this.expandToFullWidth = false,
     this.suffixIcon,
     this.prefixIcon,
     this.title = '',
@@ -82,7 +53,8 @@ class AdaptiveTextButton extends StatelessWidget {
   });
 
   final RequestStateEnum requestState;
-  final Function()? onPressed;
+  final VoidCallback? onPressed;
+  final bool? expandToFullWidth;
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
@@ -97,35 +69,37 @@ class AdaptiveTextButton extends StatelessWidget {
 
   // Factory methods to create buttons with specific button types
   factory AdaptiveTextButton.createTitleOnly({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
-    bool isDefaultTextButton = false,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
+    String? title = '',  bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
+      expandToFullWidth: expandToFullWidth!,
       title: title,
-      paddingSize: paddingSize,
+      paddingSize: paddingSize!,
       buttonType: ButtonTypeEnum.titleOnly,
       isDefaultTextButton: isDefaultTextButton,
     );
   }
 
   factory AdaptiveTextButton.createIconAndTitle({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
-    bool isDefaultTextButton = false,
+    String? title = '',   bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize,
+      expandToFullWidth: expandToFullWidth,
+      paddingSize: paddingSize!,
       buttonType: ButtonTypeEnum.iconAndTitle,
       prefixIcon: prefixIcon,
       isDefaultTextButton: isDefaultTextButton,
@@ -133,18 +107,19 @@ class AdaptiveTextButton extends StatelessWidget {
   }
 
   factory AdaptiveTextButton.createTitleAndIcon({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
-    bool isDefaultTextButton = false,
+    String? title = '',  bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize,
+      expandToFullWidth: expandToFullWidth,
+      paddingSize: paddingSize!,
       buttonType: ButtonTypeEnum.titleAndIcon,
       suffixIcon: suffixIcon,
       isDefaultTextButton: isDefaultTextButton,
@@ -152,19 +127,19 @@ class AdaptiveTextButton extends StatelessWidget {
   }
 
   factory AdaptiveTextButton.createIconTitleAndIcon({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    String? title = '',
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
-    bool isDefaultTextButton = false,
+    String? title = '',  bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
       title: title,
-      paddingSize: paddingSize,
+      paddingSize: paddingSize!,expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
@@ -173,16 +148,18 @@ class AdaptiveTextButton extends StatelessWidget {
   }
 
   factory AdaptiveTextButton.createIconOnly({
-    required RequestStateEnum requestState,
-    Function()? onPressed,
-    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    RequestStateEnum? requestState = RequestStateEnum.initial,
+    VoidCallback? onPressed,
+    bool? expandToFullWidth = false,
+    PaddingSizeEnum? paddingSize = PaddingSizeEnum.medium,
     IconData? baseIcon,
     bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
-      requestState: requestState,
+      requestState: requestState!,
       onPressed: onPressed,
-      paddingSize: paddingSize,
+      paddingSize: paddingSize!,
+      expandToFullWidth: expandToFullWidth,
       buttonType: ButtonTypeEnum.iconOnly,
       baseIcon: baseIcon,
       isDefaultTextButton: isDefaultTextButton,
@@ -196,7 +173,8 @@ class AdaptiveTextButton extends StatelessWidget {
         isDefaultTextButton
             ? theme.extension<DarkPallet>()!.dark900!
             : theme.accentColor;
-    return UnconstrainedBox(
+    return ResponsiveWidthContainer(
+      expandToFullWidth: expandToFullWidth!,
       child: ConstrainedBox(
         constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
         child: MouseRegion(
