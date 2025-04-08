@@ -1,3 +1,8 @@
+# 1.6.0+8
+- [Refactor]: Add Default Values to Simplify Button Widgets Usage  [#11](https://github.com/adelan-tejarat/vamstreet-components/pull/13)
+  - refactor(buttons): set default values for certain properties in button widgets to simplify button definition
+  - refactor(core): set reverse condition and fix expand in width
+
 # 1.5.0+7
 - [Refactor]: Fix expand in width for buttons [#11](https://github.com/adelan-tejarat/vamstreet-components/pull/12)
   - refactor(buttons): fix expand in width for buttons
