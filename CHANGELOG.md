@@ -1,3 +1,8 @@
+# 1.8.0+10
+- [Refactor]:  Create Checkbox Component [#15](https://github.com/adelan-tejarat/vamstreet-components/pull/16)
+  - feat(checkboxes): add adaptive checkbox widget
+  - feat(checkboxes): support dynamic theming and typography in AdaptiveCheckbox
+
 # 1.7.0+9
 - [Refactor]: Fix/fix null safety in expandToFullWidth property of buttons  [#11](https://github.com/adelan-tejarat/vamstreet-components/pull/14)
   - fix: fix debug overflow in EnableIntrinsicWidth and show correct in widgetBook
