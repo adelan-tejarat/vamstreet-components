@@ -16,7 +16,7 @@ import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_secon
     as _i3;
 import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_text_button/adaptive_text_button_usecase.dart'
     as _i4;
-import 'package:vamstreet_components/src/features/widgets/checkboxes/adaptive_checkbox_usecase.dart'
+import 'package:vamstreet_components/src/features/widgets/checkboxes/adaptive_checkbox/adaptive_checkbox_usecase.dart'
     as _i5;
 import 'package:vamstreet_components/src/features/widgets/chip_text_box/chip_text_box_use_case.dart'
     as _i6;
@@ -75,12 +75,17 @@ final directories = <_i1.WidgetbookNode>[
           _i1.WidgetbookFolder(
             name: 'checkboxes',
             children: [
-              _i1.WidgetbookLeafComponent(
-                name: 'AdaptiveCheckbox',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Adaptive Checkbox',
-                  builder: _i5.adaptiveCheckboxUseCase,
-                ),
+              _i1.WidgetbookFolder(
+                name: 'adaptive_checkbox',
+                children: [
+                  _i1.WidgetbookLeafComponent(
+                    name: 'AdaptiveCheckbox',
+                    useCase: _i1.WidgetbookUseCase(
+                      name: 'Adaptive Checkbox with Knobs',
+                      builder: _i5.adaptiveCheckboxUseCase,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
