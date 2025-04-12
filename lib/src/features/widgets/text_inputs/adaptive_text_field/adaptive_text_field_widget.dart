@@ -1,7 +1,8 @@
 import 'package:fluent_ui/fluent_ui.dart' show TextFormBox;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show TextInputFormatter;
-import 'package:vamstreet_components/src/features/widgets/text_inputs/core/text_field_sizes.dart' show TextFieldSizes;
+import 'package:vamstreet_components/src/features/widgets/text_inputs/core/text_field_sizes.dart'
+    show TextFieldSizes;
 
 /// ## [AdaptiveTextInput] Class Documentation
 ///
@@ -75,7 +76,7 @@ class AdaptiveTextInput extends StatelessWidget {
     this.suffix,
     this.inputFormatters,
     this.onTapSuffix,
-    this.textFieldSizes=TextFieldSizes.material,
+    this.textFieldSizes = TextFieldSizes.material,
     this.initialValue,
     this.onChanged,
     this.readOnly = false,
@@ -129,12 +130,12 @@ class AdaptiveTextInput extends StatelessWidget {
               start: textFieldSizes!.suffixStartPadding!,
             ),
             child:
-            suffix != null && onTapSuffix != null
-                ? MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(onTap: onTapSuffix, child: suffix),
-            )
-                : suffix,
+                suffix != null && onTapSuffix != null
+                    ? MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(onTap: onTapSuffix, child: suffix),
+                    )
+                    : suffix,
           ),
           placeholder: placeholder,
           padding: EdgeInsetsDirectional.only(
@@ -142,7 +143,7 @@ class AdaptiveTextInput extends StatelessWidget {
             bottom: textFieldSizes!.bottomPadding!,
             top: textFieldSizes!.topPadding!,
           ),
-          inputFormatters:inputFormatters,
+          inputFormatters: inputFormatters,
         ),
       ),
     );
