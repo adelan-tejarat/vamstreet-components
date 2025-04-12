@@ -22,6 +22,8 @@ import 'package:vamstreet_components/src/features/widgets/chip_text_box/chip_tex
     as _i6;
 import 'package:vamstreet_components/src/features/widgets/custom_text/custom_text_usecase.dart'
     as _i7;
+import 'package:vamstreet_components/src/features/widgets/text_inputs/adaptive_text_field/adaptive_text_field_usecase.dart'
+    as _i8;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
@@ -110,6 +112,23 @@ final directories = <_i1.WidgetbookNode>[
                   name: 'Select the text to display from the dropdown',
                   builder: _i7.customTextWidgetUseCase,
                 ),
+              ),
+            ],
+          ),
+          _i1.WidgetbookFolder(
+            name: 'text_inputs',
+            children: [
+              _i1.WidgetbookFolder(
+                name: 'adaptive_text_field',
+                children: [
+                  _i1.WidgetbookLeafComponent(
+                    name: 'AdaptiveTextInput',
+                    useCase: _i1.WidgetbookUseCase(
+                      name: 'Adaptive Text Input',
+                      builder: _i8.adaptiveTextInputUseCase,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
