@@ -2,6 +2,8 @@
 - [Feature]: Add Adaptive Text Field Component  [#17](https://github.com/adelan-tejarat/vamstreet-components/pull/18)
   - feat(textInputs): add adaptive text input widget
 
+- [Update]: fix import widget for access outer `src` directory  [#17](https://github.com/adelan-tejarat/vamstreet-components/pull/19)
+
 # 1.8.0+10
 - [Refactor]:  Create Checkbox Component [#15](https://github.com/adelan-tejarat/vamstreet-components/pull/16)
   - feat(checkboxes): add adaptive checkbox widget
