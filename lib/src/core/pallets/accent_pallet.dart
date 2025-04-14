@@ -88,7 +88,7 @@ class AccentPallet extends ThemeExtension<AccentPallet> {
   );
 
   static const dark = AccentPallet(
-    purple: Color(0xFF46105C),
+    purple: Color(0xFF6F2B90),
     blue: Color(0xFF093A7B),
     orange: Color(0xFF9C4700),
     red: Color(0xFF8C0E1A),
