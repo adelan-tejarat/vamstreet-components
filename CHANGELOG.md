@@ -1,3 +1,6 @@
+# 1.10.0+12
+- [Feature]: Add disable state to buttons  [#22](https://github.com/adelan-tejarat/vamstreet-components/pull/23)
+
 # 1.9.0+11
 - [Feature]: Add Adaptive Text Field Component  [#17](https://github.com/adelan-tejarat/vamstreet-components/pull/18)
   - feat(textInputs): add adaptive text input widget

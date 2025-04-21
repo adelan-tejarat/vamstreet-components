@@ -117,6 +117,8 @@ class AppThemeData {
       OnAccentPallet.lightPallet(selectedAccentColor),
     ],
     accentColor: selectedAccentColor.toAccentColor(),
+    inactiveColor: DarkPallet.light.dark400,
+    inactiveBackgroundColor: DarkPallet.light.dark100,
     scaffoldBackgroundColor:
         scaffoldBackgroundColor ?? AppColors.lightScaffoldBackground,
   );
@@ -132,6 +134,8 @@ class AppThemeData {
       OnAccentPallet.darkPallet(selectedAccentColor),
     ],
     accentColor: selectedAccentColor.toAccentColor(),
+    inactiveColor: DarkPallet.dark.dark400,
+    inactiveBackgroundColor: DarkPallet.dark.dark100,
     scaffoldBackgroundColor:
         scaffoldBackgroundColor ?? AppColors.darkScaffoldBackground,
   );
