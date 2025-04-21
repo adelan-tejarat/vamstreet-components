@@ -60,7 +60,7 @@ class _OutlineButtonWidgetState extends State<OutlineButtonWidget> {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-     return BlocBuilder<ButtonColorCubit, Color>(
+    return BlocBuilder<ButtonColorCubit, Color>(
       bloc: _colorCubit,
       builder: (context, colorState) {
         return OutlinedButton(

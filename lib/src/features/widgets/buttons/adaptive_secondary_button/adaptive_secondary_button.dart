@@ -5,7 +5,8 @@ import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
 import 'package:vamstreet_components/src/core/pallets/dark_pallet.dart'
     show DarkPallet;
 import 'package:vamstreet_components/src/core/widgets/responsive_width_container.dart';
-import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_secondary_button/outline_button_widget.dart' show OutlineButtonWidget;
+import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_secondary_button/outline_button_widget.dart'
+    show OutlineButtonWidget;
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 
 /// ## [AdaptiveTextButton] Class Documentation
@@ -210,4 +211,3 @@ class AdaptiveSecondaryButton extends StatelessWidget {
     );
   }
 }
-

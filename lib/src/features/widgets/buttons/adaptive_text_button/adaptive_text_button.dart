@@ -4,7 +4,8 @@ import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
 import 'package:vamstreet_components/src/core/widgets/responsive_width_container.dart'
     show ResponsiveWidthContainer;
-import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_text_button/text_button_widget.dart' show TextButtonWidget;
+import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_text_button/text_button_widget.dart'
+    show TextButtonWidget;
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 
 /// ## [AdaptiveTextButton] Class Documentation
@@ -204,4 +205,3 @@ class AdaptiveTextButton extends StatelessWidget {
     );
   }
 }
-

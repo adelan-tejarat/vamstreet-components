@@ -1,7 +1,8 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' show BlocBuilder;
 import 'package:vamstreet_components/app_styles.dart' show AppTheme;
-import 'package:vamstreet_components/src/core/bloc/button_color_cubit.dart' show ButtonColorCubit;
+import 'package:vamstreet_components/src/core/bloc/button_color_cubit.dart'
+    show ButtonColorCubit;
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
@@ -60,8 +61,8 @@ class _TextButtonWidgetState extends State<TextButtonWidget> {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     return BlocBuilder<ButtonColorCubit, Color>(
-        bloc: _colorCubit,
-        builder: (context, colorState) {
+      bloc: _colorCubit,
+      builder: (context, colorState) {
         return Button(
           style: ButtonStyle(
             padding: WidgetStateProperty.all<EdgeInsetsDirectional?>(
@@ -72,39 +73,44 @@ class _TextButtonWidgetState extends State<TextButtonWidget> {
             backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
             elevation: WidgetStateProperty.all<double>(0),
             shape: WidgetStateProperty.resolveWith<RoundedRectangleBorder>((
-                states,
-                ) {
+              states,
+            ) {
               if (states.isDisabled) {
                 final color = theme.inactiveColor;
                 _colorCubit.updateColor(color.toAccentColor());
                 return RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(widget.borderRadius),
-                 );
+                );
               }
               if (states.isPressed) {
                 final color = widget.buttonColor.toAccentColor().darkest;
                 _colorCubit.updateColor(color);
                 return RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(widget.borderRadius),
-                 );
+                );
               }
               if (states.isHovered) {
                 final color = widget.buttonColor.toAccentColor().dark;
                 _colorCubit.updateColor(color);
                 return RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(widget.borderRadius),
-                 );
+                );
               }
               final color = widget.buttonColor.toAccentColor();
               _colorCubit.updateColor(color);
               return RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
-               );
+              );
             }),
           ),
-          onPressed: (widget.requestState == RequestStateEnum.loading) ? null : widget.onPressed,
+          onPressed:
+              (widget.requestState == RequestStateEnum.loading)
+                  ? null
+                  : widget.onPressed,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: widget.paddingSize.horizontalSize),
+            padding: EdgeInsets.symmetric(
+              horizontal: widget.paddingSize.horizontalSize,
+            ),
             child: AdaptiveButtonContent(
               textOverflow: widget.textOverflow,
               requestState: widget.requestState,
@@ -122,7 +128,7 @@ class _TextButtonWidgetState extends State<TextButtonWidget> {
             ),
           ),
         );
-      }
+      },
     );
   }
 }
