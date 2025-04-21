@@ -63,11 +63,38 @@ ButtonStyle getFluentOutlinedButtonStyleMethod({
     backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
     foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
     elevation: WidgetStateProperty.all<double>(0),
-    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-      RoundedRectangleBorder(
+    shape: WidgetStateProperty.resolveWith<RoundedRectangleBorder>((states) {
+      if (states.isDisabled) {
+        return RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          side: BorderSide(
+            color: buttonColor.toAccentColor().lightest,
+            width: 1,
+          ),
+        );
+      }
+      if (states.isPressed) {
+        return RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          side: BorderSide(
+            color: buttonColor.toAccentColor().lightest,
+            width: 1,
+          ),
+        );
+      }
+      if (states.isHovered) {
+        return RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          side: BorderSide(
+            color: buttonColor.toAccentColor().darkest,
+            width: 1,
+          ),
+        );
+      }
+      return RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
         side: BorderSide(color: buttonColor, width: 1),
-      ),
-    ),
+      );
+    }),
   );
 }

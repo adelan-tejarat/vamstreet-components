@@ -47,6 +47,7 @@ class AdaptiveButtonContent extends StatelessWidget {
     required this.prefixIcon,
     this.title = '',
     this.textOverflow,
+    this.colorOfButton,
     this.contentColorMode = ContentColorMode.onAccentMode,
     required this.buttonType,
     this.icon,
@@ -57,6 +58,7 @@ class AdaptiveButtonContent extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
+  final Color? colorOfButton;
   final TextOverflow? textOverflow;
   final ContentColorMode? contentColorMode;
   final ButtonTypeEnum buttonType;
@@ -65,9 +67,10 @@ class AdaptiveButtonContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color contentColor = context.getColorOfContentColorMode(
-      contentColorMode,
-    );
+    final contentColor =
+        colorOfButton == null
+            ? context.getColorOfContentColorMode(contentColorMode)
+            : colorOfButton!.toAccentColor();
 
     return Center(
       child: switch (requestState) {

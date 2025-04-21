@@ -1,10 +1,12 @@
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:vamstreet_components/app_styles.dart' show AppTheme;
 import 'package:vamstreet_components/src/core/enum/padding_size_enum.dart';
 import 'package:vamstreet_components/src/core/enum/request_state_enum.dart';
+import 'package:vamstreet_components/src/core/pallets/dark_pallet.dart'
+    show DarkPallet;
 import 'package:vamstreet_components/src/core/widgets/responsive_width_container.dart';
+import 'package:vamstreet_components/src/features/widgets/buttons/adaptive_secondary_button/outline_button_widget.dart' show OutlineButtonWidget;
 import 'package:vamstreet_components/src/features/widgets/buttons/core/enums/button_type_enum.dart';
-import 'package:vamstreet_components/src/features/widgets/buttons/core/utils/methods/get_fluent_outlined_button_style_method.dart';
-import 'package:vamstreet_components/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 
 /// ## [AdaptiveTextButton] Class Documentation
 ///
@@ -179,37 +181,33 @@ class AdaptiveSecondaryButton extends StatelessWidget {
         constraints: BoxConstraints(minHeight: minHeight, maxWidth: maxWidth),
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
-          child: OutlinedButton(
-            style: getFluentOutlinedButtonStyleMethod(
-              context: context,
-              paddingSize: paddingSize,
-              isDefaultOutlinedButton: isDefaultOutlinedButton,
-              borderRadius: borderRadius,
-            ),
-            onPressed:
-                (requestState == RequestStateEnum.loading) ? null : onPressed,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: paddingSize.horizontalSize,
-              ),
-              child: AdaptiveButtonContent(
-                textOverflow: textOverflow,
+          child: Builder(
+            builder: (context) {
+              final theme = AppTheme.of(context);
+              final buttonColor =
+                  isDefaultOutlinedButton
+                      ? theme.extension<DarkPallet>()!.dark900!
+                      : theme.accentColor;
+
+              return OutlineButtonWidget(
+                paddingSize: paddingSize,
+                buttonColor: buttonColor,
+                borderRadius: borderRadius,
                 requestState: requestState,
-                contentColorMode:
-                    isDefaultOutlinedButton
-                        ? ContentColorMode.defaultMode
-                        : ContentColorMode.accentMode,
+                onPressed: onPressed,
+                textOverflow: textOverflow,
+                isDefaultOutlinedButton: isDefaultOutlinedButton,
                 suffixIcon: suffixIcon,
                 prefixIcon: prefixIcon,
                 title: title,
                 buttonType: buttonType,
-                icon: baseIcon,
-                paddingSize: paddingSize,
-              ),
-            ),
+                baseIcon: baseIcon,
+              );
+            },
           ),
         ),
       ),
     );
   }
 }
+
