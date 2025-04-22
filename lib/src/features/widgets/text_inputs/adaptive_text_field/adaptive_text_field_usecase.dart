@@ -1,5 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart' show FluentIcons;
 import 'package:flutter/material.dart';
+import 'package:vamstreet_components/app_core.dart' show TextFieldSizes;
 import 'package:vamstreet_components/src/features/widgets/text_inputs/adaptive_text_field/adaptive_text_field_widget.dart'
     show AdaptiveTextInput;
 import 'package:widgetbook/widgetbook.dart';
@@ -66,6 +67,11 @@ Widget adaptiveTextInputUseCase(BuildContext context) {
     initialValue: 100,
   );
 
+  final height = context.knobs.double.input(
+    label: 'Height',
+    initialValue: 48.0,
+  );
+
   // Appearance
   final textAlign = context.knobs.list<TextAlign>(
     label: 'Text Alignment',
@@ -90,6 +96,8 @@ Widget adaptiveTextInputUseCase(BuildContext context) {
     initialValue: false,
   );
 
+  final maxLines = context.knobs.int.input(label: 'Max Lines', initialValue: 1);
+
   final suffixIcon = context.knobs.list<Widget>(
     label: 'Suffix Icon',
     options: [
@@ -109,6 +117,8 @@ Widget adaptiveTextInputUseCase(BuildContext context) {
         readOnly: isReadOnly,
         maxLength: maxLength.toInt(),
         textAlign: textAlign,
+        maxLines: maxLines,
+        textFieldSizes: TextFieldSizes.material.copyWith(height: height),
         keyboardType: keyboardType,
         suffix: showSuffix ? suffixIcon : null,
         onTapSuffix: showSuffix ? () => debugPrint('Suffix tapped') : null,
