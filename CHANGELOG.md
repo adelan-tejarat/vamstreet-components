@@ -1,3 +1,6 @@
+# 1.11.0+13
+- [Refactor]: Fix `max_lines` and `height` properties in the `AdaptiveTextInput` component [#24(https://github.com/adelan-tejarat/vamstreet-components/pull/25)
+
 # 1.10.0+12
 - [Feature]: Add disable state to buttons  [#22](https://github.com/adelan-tejarat/vamstreet-components/pull/23)
 
