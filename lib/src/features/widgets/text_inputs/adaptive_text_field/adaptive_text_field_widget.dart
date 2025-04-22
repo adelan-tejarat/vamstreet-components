@@ -63,6 +63,14 @@ import 'package:vamstreet_components/src/features/widgets/text_inputs/core/text_
 ///   - List of input formatters for validation/formatting.
 ///   - Default: `null`
 ///
+/// - **[maxLines]** (`int?`):
+///   - Controls the maximum number of visible lines in the `TextFormBox` .
+///   - Default: `1`
+///
+/// - **[height]** (`double?`):
+///   - Height of `TextFormBox` for input data .
+///   - Default: `48`
+///
 /// ### Behavior:
 ///
 /// - Automatically handles click interactions on suffix widgets
@@ -82,6 +90,7 @@ class AdaptiveTextInput extends StatelessWidget {
     this.readOnly = false,
     this.textAlign = TextAlign.start,
     this.maxLength,
+    this.maxLines = 1,
     this.keyboardType,
     this.inputStyle,
     this.placeholderStyle,
@@ -95,6 +104,7 @@ class AdaptiveTextInput extends StatelessWidget {
   final TextAlign? textAlign;
   final TextInputType? keyboardType;
   final int? maxLength;
+  final int? maxLines;
   final TextStyle? inputStyle;
   final TextStyle? placeholderStyle;
   final VoidCallback? onTapSuffix;
@@ -117,6 +127,7 @@ class AdaptiveTextInput extends StatelessWidget {
             ),
           ),
           keyboardType: keyboardType,
+          maxLines: maxLines,
           placeholderStyle: placeholderStyle,
           style: inputStyle,
           readOnly: readOnly!,
