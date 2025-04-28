@@ -15,6 +15,6 @@ export 'package:vamstreet_components/src/core/pallets/rose_pallet.dart';
 export 'package:vamstreet_components/src/core/pallets/voilet_pallet.dart';
 export 'package:vamstreet_components/src/core/pallets/yellow_pallet.dart';
 export 'package:vamstreet_components/src/core/pallets/on_accent_pallet.dart';
-export 'package:vamstreet_components/src/core/text_styles/inter_text_styles.dart';
+export 'package:vamstreet_components/src/core/text_styles/app_text_styles.dart';
 export 'package:vamstreet_components/src/core/theme/app_theme.dart';
 export 'package:vamstreet_components/src/core/theme/app_theme_data.dart';

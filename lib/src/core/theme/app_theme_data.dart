@@ -30,7 +30,7 @@ import 'package:vamstreet_components/src/core/pallets/colors/app_colors.dart';
 ///   - An instance of `Typography` defining text styles for various use cases.
 ///   - Includes properties like `headerBold`, `titleBold`, `bodyRegular`,
 ///   `bodyBold`, `captionMedium`, and more.
-///   - Uses `InterTextStyles` for text style definitions.
+///   - Uses `AppTextStyles` for text style definitions.
 ///
 /// ### Methods:
 ///
@@ -140,14 +140,14 @@ class AppThemeData {
         scaffoldBackgroundColor ?? AppColors.darkScaffoldBackground,
   );
 
-  static Typography typography = const Typography.raw(
-    caption: InterTextStyles.captionMedium,
-    body: InterTextStyles.smallRegular,
-    bodyStrong: InterTextStyles.bodyBold,
-    bodyLarge: InterTextStyles.bodyRegular,
-    subtitle: InterTextStyles.subtitleRegular,
-    title: InterTextStyles.titleMedium,
-    titleLarge: InterTextStyles.titleBold,
-    display: InterTextStyles.headerBold,
+  static const Typography typography =   Typography.raw(
+    caption: AppTextStyles.captionMedium,
+    body: AppTextStyles.smallRegular,
+    bodyStrong: AppTextStyles.bodyBold,
+    bodyLarge: AppTextStyles.bodyRegular,
+    subtitle: AppTextStyles.subtitleRegular,
+    title: AppTextStyles.titleMedium,
+    titleLarge: AppTextStyles.titleBold,
+    display: AppTextStyles.headerBold,
   );
 }
