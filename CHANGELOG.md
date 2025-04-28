@@ -1,6 +1,8 @@
 # 1.12.0+14
 - [Feature]: Change font to `iran sans` [#26](https://github.com/adelan-tejarat/vamstreet-components/pull/27)
   -  feat(assets): remove old font and add `iran sans`
+- [Update]: Update text styles for `iran sans` font [#26](https://github.com/adelan-tejarat/vamstreet-components/pull/28)
+  -  update(core:textStyles): fix `AppTextStyles` according `iran sans` font
 
 # 1.11.0+13
 - [Refactor]: Fix `max_lines` and `height` properties in the `AdaptiveTextInput` component [#24](https://github.com/adelan-tejarat/vamstreet-components/pull/25)

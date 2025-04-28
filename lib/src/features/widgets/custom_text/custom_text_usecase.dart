@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vamstreet_components/src/core/text_styles/inter_text_styles.dart';
+import 'package:vamstreet_components/src/core/text_styles/app_text_styles.dart';
 import 'package:vamstreet_components/src/core/utils/gen/localization/locale_keys.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
@@ -58,18 +58,18 @@ Widget customTextWidgetUseCase(BuildContext context) {
   );
 
   final textStyleMap = {
-    'Caption': InterTextStyles.captionMedium,
-    'Body': InterTextStyles.smallRegular,
-    'Subtitle': InterTextStyles.subtitleRegular,
-    'Title': InterTextStyles.titleMedium,
-    'Title Large': InterTextStyles.titleBold,
-    'Display': InterTextStyles.headerBold,
-    'Body Large': InterTextStyles.bodyRegular,
-    'Body Strong': InterTextStyles.bodyBold,
+    'Caption': AppTextStyles.captionMedium,
+    'Body': AppTextStyles.smallRegular,
+    'Subtitle': AppTextStyles.subtitleRegular,
+    'Title': AppTextStyles.titleMedium,
+    'Title Large': AppTextStyles.titleBold,
+    'Display': AppTextStyles.headerBold,
+    'Body Large': AppTextStyles.bodyRegular,
+    'Body Strong': AppTextStyles.bodyBold,
   };
 
   final selectedTextStyle =
-      textStyleMap[selectedStyleName] ?? InterTextStyles.bodyRegular;
+      textStyleMap[selectedStyleName] ?? AppTextStyles.bodyRegular;
 
   final textStyle = selectedTextStyle.copyWith(
     fontWeight: fontWeight == 'Bold' ? FontWeight.bold : FontWeight.normal,
