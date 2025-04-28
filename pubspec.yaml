@@ -3,7 +3,7 @@ description: "The Vamstreet Component Library is a unified design system and mod
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.11.0+13
+version: 1.12.0+14
 
 environment:
   sdk: ^3.7.2
@@ -41,19 +41,15 @@ flutter:
   fonts:
     - family: Inter
       fonts:
-        - asset: assets/fonts/Inter-Thin.ttf
+        - asset: assets/fonts/IRANSansMobile(FaNum)_UltraLight.ttf
           weight: 100
-        - asset: assets/fonts/Inter-ExtraLight.ttf
-          weight: 100
-        - asset: assets/fonts/Inter-Light.ttf
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Light.ttf
           weight: 300
-        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/IRANSansMobile(FaNum).ttf
           weight: 400
-        - asset: assets/fonts/Inter-Medium.ttf
+        - asset:  assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
           weight: 500
-        - asset: assets/fonts/Inter-SemiBold.ttf
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Bold.ttf
           weight: 600
-        - asset: assets/fonts/Inter-Bold.ttf
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Black.ttf
           weight: 700
-        - asset: assets/fonts/Inter-ExtraBold.ttf
-          weight: 800
