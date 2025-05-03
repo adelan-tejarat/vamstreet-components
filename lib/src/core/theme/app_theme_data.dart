@@ -140,14 +140,14 @@ class AppThemeData {
         scaffoldBackgroundColor ?? AppColors.darkScaffoldBackground,
   );
 
-  static const Typography typography =   Typography.raw(
-    caption: AppTextStyles.captionMedium,
-    body: AppTextStyles.smallRegular,
-    bodyStrong: AppTextStyles.bodyBold,
-    bodyLarge: AppTextStyles.bodyRegular,
-    subtitle: AppTextStyles.subtitleRegular,
-    title: AppTextStyles.titleMedium,
-    titleLarge: AppTextStyles.titleBold,
-    display: AppTextStyles.headerBold,
+  static const Typography typography = Typography.raw(
+    caption: AppTextStyles.caption,
+    body: AppTextStyles.body,
+    bodyStrong: AppTextStyles.bodyStrong,
+    bodyLarge: AppTextStyles.bodyLarge,
+    subtitle: AppTextStyles.subtitle,
+    title: AppTextStyles.title,
+    titleLarge: AppTextStyles.titleLarge,
+    display: AppTextStyles.display,
   );
 }

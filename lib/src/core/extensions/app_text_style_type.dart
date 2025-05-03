@@ -21,7 +21,7 @@ extension AppTextStyleTypeExtension on AppTextStyleType {
   /// );
   /// ```
   TextStyle get style {
-    final t = AppThemeData.typography;
+    const t = AppThemeData.typography;
 
     return {
       AppTextStyleType.caption: t.caption,
