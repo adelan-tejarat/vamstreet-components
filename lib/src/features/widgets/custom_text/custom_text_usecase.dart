@@ -58,18 +58,18 @@ Widget customTextWidgetUseCase(BuildContext context) {
   );
 
   final textStyleMap = {
-    'Caption': AppTextStyles.captionMedium,
-    'Body': AppTextStyles.smallRegular,
-    'Subtitle': AppTextStyles.subtitleRegular,
-    'Title': AppTextStyles.titleMedium,
-    'Title Large': AppTextStyles.titleBold,
-    'Display': AppTextStyles.headerBold,
-    'Body Large': AppTextStyles.bodyRegular,
-    'Body Strong': AppTextStyles.bodyBold,
+    'Caption': AppTextStyles.caption,
+    'Body': AppTextStyles.body,
+    'Subtitle': AppTextStyles.subtitle,
+    'Title': AppTextStyles.title,
+    'Title Large': AppTextStyles.titleLarge,
+    'Display': AppTextStyles.display,
+    'Body Large': AppTextStyles.bodyLarge,
+    'Body Strong': AppTextStyles.bodyStrong,
   };
 
   final selectedTextStyle =
-      textStyleMap[selectedStyleName] ?? AppTextStyles.bodyRegular;
+      textStyleMap[selectedStyleName] ?? AppTextStyles.bodyLarge;
 
   final textStyle = selectedTextStyle.copyWith(
     fontWeight: fontWeight == 'Bold' ? FontWeight.bold : FontWeight.normal,

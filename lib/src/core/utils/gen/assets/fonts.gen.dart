@@ -10,6 +10,23 @@
 class FontFamily {
   FontFamily._();
 
-  /// Font family: Inter
-  static const String inter = 'Inter';
+  /// Font family: IranSansMobile_faNum_Black
+  static const String iranSansMobileFaNumBlack = 'IranSansMobile_faNum_Black';
+
+  /// Font family: IranSansMobile_faNum_Bold
+  static const String iranSansMobileFaNumBold = 'IranSansMobile_faNum_Bold';
+
+  /// Font family: IranSansMobile_faNum_Light
+  static const String iranSansMobileFaNumLight = 'IranSansMobile_faNum_Light';
+
+  /// Font family: IranSansMobile_faNum_Medium
+  static const String iranSansMobileFaNumMedium = 'IranSansMobile_faNum_Medium';
+
+  /// Font family: IranSansMobile_faNum_Regular
+  static const String iranSansMobileFaNumRegular =
+      'IranSansMobile_faNum_Regular';
+
+  /// Font family: IranSansMobile_faNum_UltraLight
+  static const String iranSansMobileFaNumUltraLight =
+      'IranSansMobile_faNum_UltraLight';
 }

@@ -1,3 +1,13 @@
+# 1.13.0+15
+- [Update]: Add Farsi support and remove ES/FR localization [#29](https://github.com/adelan-tejarat/vamstreet-components/pull/30)
+  - update(localization): add farsi support and remove es/fr localization
+
+- [Update]: Update text styles and add `iran-sans` font [#29](https://github.com/adelan-tejarat/vamstreet-components/pull/30)
+  - update(core:textStyles): update text style and re-config fonts by adding `iran-sans` font
+
+- [Update]: Update color palettes [#29](https://github.com/adelan-tejarat/vamstreet-components/pull/30)
+  - update(core:pallets): update some color pallets
+
 # 1.12.0+14
 - [Feature]: Change font to `iran sans` [#26](https://github.com/adelan-tejarat/vamstreet-components/pull/27)
   -  feat(assets): remove old font and add `iran sans`

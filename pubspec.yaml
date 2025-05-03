@@ -3,7 +3,7 @@ description: "The Vamstreet Component Library is a unified design system and mod
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.12.0+14
+version: 1.13.0+15
 
 environment:
   sdk: ^3.7.2
@@ -39,17 +39,92 @@ flutter:
   assets:
     - assets/fonts/
   fonts:
-    - family: Inter
+    - family: IranSansMobile_faNum_UltraLight
       fonts:
         - asset: assets/fonts/IRANSansMobile(FaNum)_UltraLight.ttf
           weight: 100
+        - asset: assets/fonts/IRANSansMobile(FaNum)_UltraLight.ttf
+          weight: 300
+        - asset: assets/fonts/IRANSansMobile(FaNum)_UltraLight.ttf
+          weight: 400
+        - asset: assets/fonts/IRANSansMobile(FaNum)_UltraLight.ttf
+          weight: 500
+        - asset: assets/fonts/IRANSansMobile(FaNum)_UltraLight.ttf
+          weight: 600
+        - asset: assets/fonts/IRANSansMobile(FaNum)_UltraLight.ttf
+          weight: 700
+
+    - family: IranSansMobile_faNum_Light
+      fonts:
         - asset: assets/fonts/IRANSansMobile(FaNum)_Light.ttf
+          weight: 100
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Light.ttf
+          weight: 300
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Light.ttf
+          weight: 400
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Light.ttf
+          weight: 500
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Light.ttf
+          weight: 600
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Light.ttf
+          weight: 700
+
+    - family: IranSansMobile_faNum_Regular
+      fonts:
+        - asset: assets/fonts/IRANSansMobile(FaNum).ttf
+          weight: 100
+        - asset: assets/fonts/IRANSansMobile(FaNum).ttf
           weight: 300
         - asset: assets/fonts/IRANSansMobile(FaNum).ttf
           weight: 400
-        - asset:  assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
+        - asset: assets/fonts/IRANSansMobile(FaNum).ttf
+          weight: 500
+        - asset: assets/fonts/IRANSansMobile(FaNum).ttf
+          weight: 600
+        - asset: assets/fonts/IRANSansMobile(FaNum).ttf
+          weight: 700
+
+    - family: IranSansMobile_faNum_Medium
+      fonts:
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
+          weight: 100
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
+          weight: 300
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
+          weight: 400
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
+          weight: 500
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
+          weight: 600
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Medium.ttf
+          weight: 700
+
+    - family: IranSansMobile_faNum_Bold
+      fonts:
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Bold.ttf
+          weight: 100
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Bold.ttf
+          weight: 300
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Bold.ttf
+          weight: 400
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Bold.ttf
           weight: 500
         - asset: assets/fonts/IRANSansMobile(FaNum)_Bold.ttf
+          weight: 600
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Bold.ttf
+          weight: 700
+
+    - family: IranSansMobile_faNum_Black
+      fonts:
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Black.ttf
+          weight: 100
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Black.ttf
+          weight: 300
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Black.ttf
+          weight: 400
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Black.ttf
+          weight: 500
+        - asset: assets/fonts/IRANSansMobile(FaNum)_Black.ttf
           weight: 600
         - asset: assets/fonts/IRANSansMobile(FaNum)_Black.ttf
           weight: 700
