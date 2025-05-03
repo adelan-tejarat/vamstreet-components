@@ -16,8 +16,5 @@ class AppLocales {
   static const faIRLocale = Locale('fa', 'IR');
 
   /// Define the list of supported locales in the desired order
-  static const supportedLocales = [
-    enUSLocale,
-    faIRLocale,
-  ];
+  static const supportedLocales = [enUSLocale, faIRLocale];
 }
