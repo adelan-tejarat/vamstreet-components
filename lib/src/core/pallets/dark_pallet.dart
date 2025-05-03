@@ -10,6 +10,10 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 /// ### Properties:
 ///
+/// - **[contrast]** (`Color?`):
+///   - Represents the very usable colors in the figma design (text,icons,etc).
+///   - Defaults to `null` if not provided.
+///
 /// - **[dark900]** (`Color?`):
 ///   - Represents the darkest shade in the dark color palette.
 ///   - Defaults to `null` if not provided.
@@ -85,6 +89,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 @immutable
 class DarkPallet extends ThemeExtension<DarkPallet> {
   const DarkPallet({
+    required this.contrast,
     required this.dark900,
     required this.dark800,
     required this.dark700,
@@ -97,6 +102,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
     required this.dark50,
   });
 
+  final Color? contrast;
   final Color? dark900;
   final Color? dark800;
   final Color? dark700;
@@ -110,6 +116,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   @override
   DarkPallet copyWith({
+    Color? contrast,
     Color? dark900,
     Color? dark800,
     Color? dark700,
@@ -122,6 +129,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
     Color? dark50,
   }) {
     return DarkPallet(
+      contrast: contrast ?? this.contrast,
       dark900: dark900 ?? this.dark900,
       dark800: dark800 ?? this.dark800,
       dark700: dark700 ?? this.dark700,
@@ -142,6 +150,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
       return this;
     }
     return DarkPallet(
+      contrast: Color.lerp(contrast, other.contrast, t),
       dark900: Color.lerp(dark900, other.dark900, t),
       dark800: Color.lerp(dark800, other.dark800, t),
       dark700: Color.lerp(dark700, other.dark700, t),
@@ -160,6 +169,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
   @override
   String toString() =>
       'DarkPallet('
+      'contrast:$contrast, '
       'dark900:$dark900, '
       'dark800: $dark800, '
       'dark700: $dark700, '
@@ -174,6 +184,8 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   Color? getByIndex(int index) {
     switch (index) {
+      case 11:
+        return contrast;
       case 10:
         return dark900;
       case 9:
@@ -201,6 +213,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   // dark theme with opacity
   static const light = DarkPallet(
+    contrast: Color(0xFF242424),
     dark900: Color(0xFF1A1A1A),
     dark800: Color.fromRGBO(26, 26, 26, 0.8),
     dark700: Color.fromRGBO(26, 26, 26, 0.7),
@@ -215,6 +228,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   // the dark theme
   static const dark = DarkPallet(
+    contrast: Color(0xFFFFFFFF),
     dark900: Color(0xFFFFFFFF),
     dark800: Color.fromRGBO(255, 255, 255, 0.8),
     dark700: Color.fromRGBO(255, 255, 255, 0.7),
