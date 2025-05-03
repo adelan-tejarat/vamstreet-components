@@ -8,11 +8,10 @@ import 'package:vamstreet_components/src/features/main/language/data/language_ca
 ///
 /// **Fields:**
 /// - [enUS] : Represents English (United States).
-/// - [frFR] : Represents French (France).
-/// - [esES] : Represents Spanish (Spain).
+/// - [faIR] : Represents Farsi (Iran).
 ///
 /// **List of Supported Languages:**
-/// - [languageCases] : A list containing all the defined language cases (`enUS`, `frFR`, `esES`).
+/// - [languageCases] : A list containing all the defined language cases (`enUS`, `faIR`).
 ///
 /// **Usage:**
 /// - This class provides easy access to different languages and locales.
@@ -20,9 +19,9 @@ import 'package:vamstreet_components/src/features/main/language/data/language_ca
 ///
 /// **LanguageCase Structure:**
 /// Each `LanguageCase` consists of:
-/// - `country`: The country code (e.g., 'US', 'FR', 'ES').
-/// - `language`: The language code (e.g., 'en', 'fr', 'es').
-/// - `name`: The name of the language (e.g., 'English', 'Français', 'Español').
+/// - `country`: The country code (e.g., 'US', 'IR').
+/// - `language`: The language code (e.g., 'en', 'fa').
+/// - `name`: The name of the language (e.g., 'English', 'Farsi').
 class LanguageConstants {
   LanguageConstants._();
   static final LanguageCase enUS = LanguageCase(
@@ -31,17 +30,11 @@ class LanguageConstants {
     name: 'English',
   );
 
-  static final LanguageCase frFR = LanguageCase(
-    country: 'FR',
-    language: 'fr',
-    name: 'Français',
+  static final LanguageCase faIR = LanguageCase(
+    country: 'IR',
+    language: 'fa',
+    name: 'Farsi',
   );
 
-  static final LanguageCase esES = LanguageCase(
-    country: 'ES',
-    language: 'es',
-    name: 'Español',
-  );
-
-  static final List<LanguageCase> languageCases = [enUS, frFR, esES];
+  static final List<LanguageCase> languageCases = [enUS, faIR];
 }

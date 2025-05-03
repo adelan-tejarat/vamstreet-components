@@ -23,24 +23,18 @@ class CodegenLoader {
   }
 
   static const Map<String, dynamic> enUS = {
-    'app_name': 'Pactus GUI (EN)',
+    'app_name': 'Vam Street',
     'man': 'Man',
     'woman': 'Woman',
   };
-  static const Map<String, dynamic> frFR = {
-    'app_name': 'Pactus GUI (FR)',
-    'man': 'Homme',
-    'woman': 'Femme',
-  };
-  static const Map<String, dynamic> esES = {
-    'app_name': 'Pactus GUI (ES)',
-    'man': 'Hombre',
-    'woman': 'Mujer',
+  static const Map<String, dynamic> faIR = {
+    'app_name': 'وام استریت',
+    'man': 'مرد',
+    'woman': 'زن',
   };
 
   static const Map<String, Map<String, dynamic>> mapLocales = {
     'en_US': enUS,
-    'fr_FR': frFR,
-    'es_ES': esES,
+    'fa_IR': faIR,
   };
 }
