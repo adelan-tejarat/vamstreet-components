@@ -24,7 +24,7 @@ import 'package:flutter/material.dart' show FontWeight, TextStyle;
 /// ### Predefined Text Styles:
 ///
 /// - **[caption]**:
-///   - Font: `IranSansMobile_faNum_Medium`
+///   - Font: `IranSansMobile_faNum_Regular`
 ///   - Font Size: `12px`
 ///   - Font Weight: `Medium (500)`
 ///   - Line Height: `22px` (1.83 ratio)
@@ -36,7 +36,7 @@ import 'package:flutter/material.dart' show FontWeight, TextStyle;
 ///   - Line Height: `22px` (1.57 ratio)
 ///
 /// - **[bodyStrong]**:
-///   - Font: `IranSansMobile_faNum_Bold`
+///   - Font: `IranSansMobile_faNum_Regular`
 ///   - Font Size: `16px`
 ///   - Font Weight: `Bold (700)`
 ///   - Line Height: `24px` (1.5 ratio)
@@ -54,19 +54,19 @@ import 'package:flutter/material.dart' show FontWeight, TextStyle;
 ///   - Line Height: `22px` (1.1 ratio)
 ///
 /// - **[title]**:
-///   - Font: `IranSansMobile_faNum_Medium`
+///   - Font: `IranSansMobile_faNum_Regular`
 ///   - Font Size: `24px`
 ///   - Font Weight: `Medium (500)`
 ///   - Line Height: `36px` (1.5 ratio)
 ///
 /// - **[titleLarge]**:
-///   - Font: `IranSansMobile_faNum_Bold`
+///   - Font: `IranSansMobile_faNum_Regular`
 ///   - Font Size: `28px`
 ///   - Font Weight: `Bold (700)`
 ///   - Line Height: `28px` (1.0 ratio)
 ///
 /// - **[display]**:
-///   - Font: `IranSansMobile_faNum_Bold`
+///   - Font: `IranSansMobile_faNum_Regular`
 ///   - Font Size: `42px`
 ///   - Font Weight: `Bold (700)`
 ///   - Line Height: `52px` (1.24 ratio)
@@ -87,17 +87,11 @@ class AppTextStyles {
   AppTextStyles._();
 
   // Font family constants based on the specified weights
-  static const iranSansMobileFaNumUltraLight =
-      'IranSansMobile_faNum_UltraLight';
-  static const iranSansMobileFaNumLight = 'IranSansMobile_faNum_Light';
   static const iranSansMobileFaNumRegular = 'IranSansMobile_faNum_Regular';
-  static const iranSansMobileFaNumMedium = 'IranSansMobile_faNum_Medium';
-  static const iranSansMobileFaNumBold = 'IranSansMobile_faNum_Bold';
-  static const iranSansMobileFaNumBlack = 'IranSansMobile_faNum_Black';
 
   // Caption/medium
   static const TextStyle caption = TextStyle(
-    fontFamily: iranSansMobileFaNumMedium,
+    fontFamily: iranSansMobileFaNumRegular,
     fontSize: 12, // font-size: 12px;
     fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
     height: 1.83, // line-height: 22px (22px line-height / 12px font-size);
@@ -113,7 +107,7 @@ class AppTextStyles {
 
   // Body/bold
   static const TextStyle bodyStrong = TextStyle(
-    fontFamily: iranSansMobileFaNumBold,
+    fontFamily: iranSansMobileFaNumRegular,
     fontSize: 16, // font-size: 16px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
     height: 1.5, // line-height: 24px (24px line-height / 16px font-size);
@@ -137,7 +131,7 @@ class AppTextStyles {
 
   // Title/medium
   static const TextStyle title = TextStyle(
-    fontFamily: iranSansMobileFaNumMedium,
+    fontFamily: iranSansMobileFaNumRegular,
     fontSize: 24, // font-size: 24px;
     fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
     height: 1.5, // line-height: 36px (36px line-height / 24px font-size);
@@ -145,7 +139,7 @@ class AppTextStyles {
 
   // Title/bold
   static const TextStyle titleLarge = TextStyle(
-    fontFamily: iranSansMobileFaNumBold,
+    fontFamily: iranSansMobileFaNumRegular,
     fontSize: 28, // font-size: 28px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
     height: 1.0, // line-height: 28px (28px line-height / 28px font-size);
@@ -153,7 +147,7 @@ class AppTextStyles {
 
   // Header/bold
   static const TextStyle display = TextStyle(
-    fontFamily: iranSansMobileFaNumBold,
+    fontFamily: iranSansMobileFaNumRegular,
     fontSize: 42, // font-size: 42px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
     height: 1.24, // line-height: 52px (52px line-height / 42px font-size);
