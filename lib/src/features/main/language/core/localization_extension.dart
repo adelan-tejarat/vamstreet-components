@@ -44,9 +44,8 @@ extension LocalizationExtension on BuildContext {
     if (key == null) return '';
 
     final locale = Localizations.localeOf(this);
-    final localeMap =
-        CodegenLoader
-            .mapLocales['${locale.languageCode}_${locale.countryCode}'];
+    final localeMap = CodegenLoader
+        .mapLocales['${locale.languageCode}_${locale.countryCode}'];
     if (localeMap != null && localeMap.containsKey(key)) {
       return localeMap[key];
     }

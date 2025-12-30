@@ -67,10 +67,9 @@ class AdaptiveButtonContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final contentColor =
-        colorOfButton == null
-            ? context.getColorOfContentColorMode(contentColorMode)
-            : colorOfButton!.toAccentColor();
+    final contentColor = colorOfButton == null
+        ? context.getColorOfContentColorMode(contentColorMode)
+        : colorOfButton!.toAccentColor();
 
     return Center(
       child: switch (requestState) {

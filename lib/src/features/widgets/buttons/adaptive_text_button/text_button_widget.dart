@@ -103,10 +103,9 @@ class _TextButtonWidgetState extends State<TextButtonWidget> {
               );
             }),
           ),
-          onPressed:
-              (widget.requestState == RequestStateEnum.loading)
-                  ? null
-                  : widget.onPressed,
+          onPressed: (widget.requestState == RequestStateEnum.loading)
+              ? null
+              : widget.onPressed,
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: widget.paddingSize.horizontalSize,
@@ -121,10 +120,9 @@ class _TextButtonWidgetState extends State<TextButtonWidget> {
               buttonType: widget.buttonType,
               icon: widget.baseIcon,
               paddingSize: widget.paddingSize,
-              contentColorMode:
-                  widget.isDefaultTextButton
-                      ? ContentColorMode.defaultMode
-                      : ContentColorMode.accentMode,
+              contentColorMode: widget.isDefaultTextButton
+                  ? ContentColorMode.defaultMode
+                  : ContentColorMode.accentMode,
             ),
           ),
         );

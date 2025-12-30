@@ -23,8 +23,9 @@ class AppTheme extends InheritedWidget {
 
   final FluentThemeData themeData;
   static FluentThemeData of(BuildContext context) {
-    final scope =
-        context.dependOnInheritedWidgetOfExactType<AppTheme>()!.themeData;
+    final scope = context
+        .dependOnInheritedWidgetOfExactType<AppTheme>()!
+        .themeData;
     return scope;
   }
 

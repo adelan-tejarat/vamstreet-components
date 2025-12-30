@@ -1,3 +1,6 @@
+# 1.14.0+16
+- [Update]: update dependencies [#31](https://github.com/adelan-tejarat/vamstreet-components/pull/32)
+
 # 1.13.0+15
 - [Update]: Add Farsi support and remove ES/FR localization [#29](https://github.com/adelan-tejarat/vamstreet-components/pull/30)
   - update(localization): add farsi support and remove es/fr localization

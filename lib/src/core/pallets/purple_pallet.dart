@@ -52,6 +52,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 @immutable
 class PurplePallet extends ThemeExtension<PurplePallet> {
   const PurplePallet({
+    required this.reverse,
     required this.purple900,
     required this.purple800,
     required this.purple700,
@@ -64,6 +65,7 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
     required this.purple50,
   });
 
+  final Color? reverse;
   final Color? purple900;
   final Color? purple800;
   final Color? purple700;
@@ -77,6 +79,7 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
 
   @override
   PurplePallet copyWith({
+    Color? reverse,
     Color? purple900,
     Color? purple800,
     Color? purple700,
@@ -89,6 +92,7 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
     Color? purple50,
   }) {
     return PurplePallet(
+      reverse: reverse ?? this.reverse,
       purple900: purple900 ?? this.purple900,
       purple800: purple800 ?? this.purple800,
       purple700: purple700 ?? this.purple700,
@@ -109,6 +113,7 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
       return this;
     }
     return PurplePallet(
+      reverse: Color.lerp(reverse, other.reverse, t),
       purple900: Color.lerp(purple900, other.purple900, t),
       purple800: Color.lerp(purple800, other.purple800, t),
       purple700: Color.lerp(purple700, other.purple700, t),
@@ -127,6 +132,7 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
   @override
   String toString() =>
       'PurplePallet('
+      'reverse:$reverse, '
       'purple900:$purple900, '
       'purple800: $purple800, '
       'purple700: $purple700, '
@@ -141,6 +147,8 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
 
   Color? getByIndex(int index) {
     switch (index) {
+      case 11:
+        return reverse;
       case 10:
         return purple900;
       case 9:
@@ -168,6 +176,7 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
 
   // the light theme
   static const light = PurplePallet(
+    reverse: Color(0xFF743B9D),
     purple900: Color(0xFF381254),
     purple800: Color(0xFF5F1E95),
     purple700: Color(0xFF7620C1),
@@ -182,6 +191,7 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
 
   // the dark theme
   static const dark = PurplePallet(
+    reverse: Color(0xFF2E004F),
     purple900: Color(0xFFFFEFFF),
     purple800: Color(0xFFFFD6FF),
     purple700: Color(0xFFFFBCFF),

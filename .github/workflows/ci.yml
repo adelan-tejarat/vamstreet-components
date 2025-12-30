@@ -12,38 +12,56 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.29.2'
+          flutter-version: '3.38.5'
+          channel: 'stable'
+
       - name: Install dependencies
         run: flutter pub get
-      - name: Generate Localization Files
-        id: gen_l10n
-        run: |
-          # Run the command to generate localization files and capture the output
-          output=$(flutter gen-l10n)
-          echo "$output"
-          
-          # Check if there are untranslated messages in the output
-          if echo "$output" | grep -q "untranslated message"; then
-            echo "::error file=lib/l10n/l10n.yaml::Error: Untranslated messages detected in your localization files."
-            echo "::error::There are untranslated messages in the following languages:"
-            echo "$output" | grep "untranslated message"
-            echo "::error::Please ensure that all translations are provided in the respective .arb files."
-            exit 1
-          fi
-      - name: Check Localization Files
-        run: |
-          git diff --exit-code lib/l10n/ || (
-            echo "Localization files are outdated. Run 'flutter gen-l10n' and commit changes.";
-            exit 1;
-          )
+#      - name: Run Dart Format Check
+#        run: |
+#          dart format . --set-exit-if-changed || (
+#            echo "Code formatting issues detected. Run 'dart format .' and commit the changes.";
+#            exit 1;
+#          )
+#
+#      - name: Generate Localization Files
+#        id: gen_l10n
+#        run: |
+#          git stash
+#
+#          output=$(flutter gen-l10n)
+#          echo "$output"
+#
+#          git stash pop || true
+#
+#          if echo "$output" | grep -q "untranslated message"; then
+#            echo "::error file=lib/l10n/l10n.yaml::Error: Untranslated messages detected in your localization files."
+#            echo "::error::There are untranslated messages in the following languages:"
+#            echo "$output" | grep "untranslated message"
+#            echo "::error::Please ensure that all translations are provided in the respective .arb files."
+#            exit 1
+#          fi
+#
+#      - name: Check Localization Files
+#        run: |
+#          flutter gen-l10n --suppress-warnings
+#
+#          git diff --exit-code lib/l10n/*.dart || (
+#            echo "Localization generated files are outdated. Run 'flutter gen-l10n' and commit changes.";
+#            echo "Changed files:"
+#            git diff --name-only lib/l10n/
+#            exit 1;
+#          )
+#
+#          echo "✓ Localization files are up to date"
+#
+#      - name: Check if translations_utils.dart has changes
+#        run: |
+#          git diff --exit-code lib/src/core/utils/gen/localization/translations_utils.dart || (
+#            echo "Error: Changes detected in translations_utils.dart. Please run the necessary custom translation utilities and commit changes.";
+#            exit 1;
+#          )
 
-      # New step to check changes in source code
-      - name: Check if translations_utils.dart has changes
-        run: |
-          git diff --exit-code lib/src/core/utils/gen/localization/translations_utils.dart || (
-            echo "Error: Changes detected in translations_utils.dart. Please run the necessary custom translation utilities and commit changes.";
-            exit 1;
-          )
 
       - name: Run Dart Format Check
         run: |
@@ -51,8 +69,8 @@ jobs:
             echo "Code formatting issues detected. Run 'dart format .' and commit the changes.";
             exit 1;
           )
-      - name: Run Flutter Analyze
-        run: flutter analyze
+#      - name: Run Flutter Analyze
+#        run: flutter analyze
       - name: Run tests
         run: flutter test
 

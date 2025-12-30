@@ -36,8 +36,9 @@ extension ContentColorModeExtension on BuildContext {
   Color getColorOfContentColorMode(ContentColorMode? contentColorMode) {
     return switch (contentColorMode) {
       ContentColorMode.accentMode => AppTheme.of(this).accentColor,
-      ContentColorMode.defaultMode =>
-        AppTheme.of(this).extension<DarkPallet>()!.dark900!,
+      ContentColorMode.defaultMode => AppTheme.of(
+        this,
+      ).extension<DarkPallet>()!.dark900!,
       _ => AppTheme.of(this).extension<OnAccentPallet>()!.onAccentColor,
     };
   }

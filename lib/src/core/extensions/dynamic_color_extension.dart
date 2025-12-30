@@ -24,8 +24,9 @@ extension DynamicColorEnumExtension on BuildContext {
   Color? fromDynamicColorType(DynamicColorEnum? dynamicColor) {
     return switch (dynamicColor) {
       DynamicColorEnum.asAccentColor => AppTheme.of(this).accentColor,
-      DynamicColorEnum.asOnAccentColor =>
-        AppTheme.of(this).extension<OnAccentPallet>()!.onAccentColor,
+      DynamicColorEnum.asOnAccentColor => AppTheme.of(
+        this,
+      ).extension<OnAccentPallet>()!.onAccentColor,
       _ => AppTheme.of(this).extension<DarkPallet>()!.dark900,
     };
   }

@@ -42,13 +42,12 @@ Widget adaptiveCheckboxUseCase(BuildContext context) {
   return Center(
     child: AdaptiveCheckbox(
       checked: isChecked,
-      onChanged:
-          isDisabled
-              ? null
-              : (value) {
-                // You can add debug print or state management here
-                debugPrint('Checkbox value changed: $value');
-              },
+      onChanged: isDisabled
+          ? null
+          : (value) {
+              // You can add debug print or state management here
+              debugPrint('Checkbox value changed: $value');
+            },
       label: hasLabel ? label : null,
       appTextStyleType: appTextStyleType,
       dynamicColor: dynamicColor,

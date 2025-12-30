@@ -1,5 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:vamstreet_components/app_scaffold.dart';
+import 'package:vamstreet_components/l10n/app_localizations.dart'
+    show AppLocalizations;
 import 'package:vamstreet_components/src/core/pallets/accent_pallet.dart';
 import 'package:vamstreet_components/src/core/theme/app_theme.dart';
 import 'package:vamstreet_components/src/core/theme/app_theme_data.dart';
@@ -8,7 +10,6 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 import 'package:vamstreet_components/src/core/utils/gen/localization/app_locales.dart';
 import 'package:vamstreet_components/src/core/utils/gen/localization/customized_localization_addon.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'main.directories.g.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class WidgetBookApp extends StatelessWidget {
       addons: [
         CustomizedLocalizationAddon(
           locales: AppLocales.supportedLocales,
-          localizationsDelegates: const [
+          localizationsDelegates: [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -115,7 +116,10 @@ class WidgetBookApp extends StatelessWidget {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              home: AppTheme(themeData: data, child: AppScaffold(child: child)),
+              home: AppTheme(
+                themeData: data,
+                child: AppScaffold(child: child),
+              ),
             );
           },
         ),

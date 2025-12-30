@@ -107,10 +107,9 @@ class _OutlineButtonWidgetState extends State<OutlineButtonWidget> {
               );
             }),
           ),
-          onPressed:
-              (widget.requestState == RequestStateEnum.loading)
-                  ? null
-                  : widget.onPressed,
+          onPressed: (widget.requestState == RequestStateEnum.loading)
+              ? null
+              : widget.onPressed,
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: widget.paddingSize.horizontalSize,
@@ -118,10 +117,9 @@ class _OutlineButtonWidgetState extends State<OutlineButtonWidget> {
             child: AdaptiveButtonContent(
               textOverflow: widget.textOverflow,
               requestState: widget.requestState,
-              contentColorMode:
-                  widget.isDefaultOutlinedButton
-                      ? ContentColorMode.defaultMode
-                      : ContentColorMode.accentMode,
+              contentColorMode: widget.isDefaultOutlinedButton
+                  ? ContentColorMode.defaultMode
+                  : ContentColorMode.accentMode,
               suffixIcon: widget.suffixIcon,
               prefixIcon: widget.prefixIcon,
               title: widget.title,

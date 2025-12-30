@@ -176,10 +176,9 @@ class AdaptiveTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final buttonColor =
-        isDefaultTextButton
-            ? theme.extension<DarkPallet>()!.dark900!
-            : theme.accentColor;
+    final buttonColor = isDefaultTextButton
+        ? theme.extension<DarkPallet>()!.dark900!
+        : theme.accentColor;
     return ResponsiveWidthContainer(
       expandToFullWidth: expandToFullWidth!,
       child: ConstrainedBox(
