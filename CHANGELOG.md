@@ -1,3 +1,6 @@
+# 1.15.0+17
+- [Update]: Resolved problem weight size of fonts [#33](https://github.com/adelan-tejarat/vamstreet-components/pull/34)
+
 # 1.14.0+16
 - [Update]: update dependencies [#31](https://github.com/adelan-tejarat/vamstreet-components/pull/32)
 
