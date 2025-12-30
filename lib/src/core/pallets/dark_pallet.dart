@@ -89,6 +89,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 @immutable
 class DarkPallet extends ThemeExtension<DarkPallet> {
   const DarkPallet({
+    required this.reverse,
     required this.contrast,
     required this.dark900,
     required this.dark800,
@@ -102,6 +103,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
     required this.dark50,
   });
 
+  final Color? reverse;
   final Color? contrast;
   final Color? dark900;
   final Color? dark800;
@@ -116,6 +118,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   @override
   DarkPallet copyWith({
+    Color? reverse,
     Color? contrast,
     Color? dark900,
     Color? dark800,
@@ -129,6 +132,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
     Color? dark50,
   }) {
     return DarkPallet(
+      reverse: reverse ?? this.reverse,
       contrast: contrast ?? this.contrast,
       dark900: dark900 ?? this.dark900,
       dark800: dark800 ?? this.dark800,
@@ -150,6 +154,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
       return this;
     }
     return DarkPallet(
+      reverse: Color.lerp(reverse, other.reverse, t),
       contrast: Color.lerp(contrast, other.contrast, t),
       dark900: Color.lerp(dark900, other.dark900, t),
       dark800: Color.lerp(dark800, other.dark800, t),
@@ -169,6 +174,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
   @override
   String toString() =>
       'DarkPallet('
+      'reverse:$reverse, '
       'contrast:$contrast, '
       'dark900:$dark900, '
       'dark800: $dark800, '
@@ -184,6 +190,8 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   Color? getByIndex(int index) {
     switch (index) {
+      case 12:
+        return reverse;
       case 11:
         return contrast;
       case 10:
@@ -213,6 +221,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   // dark theme with opacity
   static const light = DarkPallet(
+    reverse: Color(0xFFBCBCBC),
     contrast: Color(0xFF242424),
     dark900: Color(0xFF1A1A1A),
     dark800: Color.fromRGBO(26, 26, 26, 0.8),
@@ -228,6 +237,7 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
 
   // the dark theme
   static const dark = DarkPallet(
+    reverse: Color(0xFF242424),
     contrast: Color(0xFFFFFFFF),
     dark900: Color(0xFFFFFFFF),
     dark800: Color.fromRGBO(255, 255, 255, 0.8),

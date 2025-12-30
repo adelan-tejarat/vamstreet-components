@@ -140,13 +140,12 @@ class AdaptiveTextInput extends StatelessWidget {
               end: textFieldSizes!.endPadding!,
               start: textFieldSizes!.suffixStartPadding!,
             ),
-            child:
-                suffix != null && onTapSuffix != null
-                    ? MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: GestureDetector(onTap: onTapSuffix, child: suffix),
-                    )
-                    : suffix,
+            child: suffix != null && onTapSuffix != null
+                ? MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(onTap: onTapSuffix, child: suffix),
+                  )
+                : suffix,
           ),
           placeholder: placeholder,
           padding: EdgeInsetsDirectional.only(

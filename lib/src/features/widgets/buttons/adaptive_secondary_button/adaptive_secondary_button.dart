@@ -185,10 +185,9 @@ class AdaptiveSecondaryButton extends StatelessWidget {
           child: Builder(
             builder: (context) {
               final theme = AppTheme.of(context);
-              final buttonColor =
-                  isDefaultOutlinedButton
-                      ? theme.extension<DarkPallet>()!.dark900!
-                      : theme.accentColor;
+              final buttonColor = isDefaultOutlinedButton
+                  ? theme.extension<DarkPallet>()!.dark900!
+                  : theme.accentColor;
 
               return OutlineButtonWidget(
                 paddingSize: paddingSize,

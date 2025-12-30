@@ -175,8 +175,9 @@ class AdaptivePrimaryButton extends StatelessWidget {
               paddingSize: paddingSize,
               borderRadius: borderRadius,
             ),
-            onPressed:
-                (requestState == RequestStateEnum.loading) ? null : onPressed,
+            onPressed: (requestState == RequestStateEnum.loading)
+                ? null
+                : onPressed,
             child: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: paddingSize.horizontalSize,

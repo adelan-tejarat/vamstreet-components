@@ -128,30 +128,29 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
       child: AdaptiveSecondaryButton(
         title:
             buttonType == ButtonTypeEnum.titleOnly ||
-                    buttonType == ButtonTypeEnum.iconAndTitle ||
-                    buttonType == ButtonTypeEnum.titleAndIcon ||
-                    buttonType == ButtonTypeEnum.iconTitleAndIcon
-                ? context.tr(text)
-                : null,
+                buttonType == ButtonTypeEnum.iconAndTitle ||
+                buttonType == ButtonTypeEnum.titleAndIcon ||
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            ? context.tr(text)
+            : null,
         requestState: requestState,
         buttonType: buttonType,
         prefixIcon:
             buttonType == ButtonTypeEnum.iconAndTitle ||
-                    buttonType == ButtonTypeEnum.iconTitleAndIcon
-                ? prefixIcon
-                : null,
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            ? prefixIcon
+            : null,
         suffixIcon:
             buttonType == ButtonTypeEnum.titleAndIcon ||
-                    buttonType == ButtonTypeEnum.iconTitleAndIcon
-                ? suffixIcon
-                : null,
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            ? suffixIcon
+            : null,
         baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
-        onPressed:
-            (requestState == RequestStateEnum.loading || isDisabled)
-                ? null
-                : () {
-                  debugPrint('Adaptive Primary Button Pressed');
-                },
+        onPressed: (requestState == RequestStateEnum.loading || isDisabled)
+            ? null
+            : () {
+                debugPrint('Adaptive Primary Button Pressed');
+              },
         paddingSize: paddingSize,
         textOverflow: textOverflow,
         minHeight: minHeight,
